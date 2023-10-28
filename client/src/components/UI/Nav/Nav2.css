@@ -3,8 +3,13 @@
   height: 50px;
 } */
 
+/* var */
+.Nav2 {
+  --Nav_background-color: rgba(0, 0, 0, 1);
+}
+
 header.Nav2 {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: var(--Nav_background-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
