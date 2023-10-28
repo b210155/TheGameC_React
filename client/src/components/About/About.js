@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet";
 import AboutIntro from "./Section1/AboutIntro";
 import AboutIdea from "./Section2/AboutIdea";
 import AboutJoin from "./Section3/AboutJoin";
-import AboutContact from "./Section4/AboutContact";
 
 import classes from "./About.module.css";
 
@@ -20,8 +19,6 @@ const About = () => {
       <AboutIdea />
       {/* 公司介紹 */}
       <AboutJoin />
-      {/* 聯絡資訊 */}
-      <AboutContact />
     </div>
   );
 };
