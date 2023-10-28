@@ -25,6 +25,7 @@
   position: fixed;
   z-index: 1;
   overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
 }
 .UserFuncSelect::-webkit-scrollbar {
   width: 0;

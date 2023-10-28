@@ -9,6 +9,7 @@
   margin-left: 150px;
   gap: 30px;
   overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
 }
 .aboutIntroInfo::-webkit-scrollbar {
   width: 0;

@@ -15,6 +15,7 @@
   max-height: 90%;
   z-index: 9000;
   overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
 }
 .dialog::-webkit-scrollbar {
   width: 0;

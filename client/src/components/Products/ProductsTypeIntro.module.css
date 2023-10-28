@@ -132,6 +132,7 @@
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
   padding-bottom: 35px;
 }
 .productsTypeIntro .dropDown .info::-webkit-scrollbar {

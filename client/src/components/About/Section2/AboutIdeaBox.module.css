@@ -85,13 +85,12 @@
 .aboutIdeaBox .textContainer .contentBox {
   width: 100%;
   height: 0;
-  /* padding: 25px; */
-  overflow: hidden;
   text-align: center;
   line-height: 1.6rem;
   letter-spacing: 0.1rem;
   transition: 0.15s;
   overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
 }
 .aboutIdeaBox .textContainer .contentBox::-webkit-scrollbar {
   width: 0;

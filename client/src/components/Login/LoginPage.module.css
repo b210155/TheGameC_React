@@ -1,7 +1,6 @@
 .loginPage {
   display: flex;
-  /* height: 100vh; */
-  overflow: hidden; /* 隱藏滾動條 */
+  overflow: hidden;
   position: relative;
 }
 

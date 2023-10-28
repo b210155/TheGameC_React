@@ -83,7 +83,6 @@
   font-size: 0.9rem;
   letter-spacing: 0.2rem;
   overflow-y: scroll;
-  /* scroll 樣式 */
   scrollbar-width: none; /* Firefox */
 }
 /* scroll 樣式 Chrome、Safari */

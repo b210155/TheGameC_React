@@ -149,6 +149,7 @@
   }
   .productRecommend .productContainer .product .info h2 {
     overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
     height: fit-content;
     width: 80px;
     font-size: 1rem;
