@@ -1,0 +1,47 @@
+.aboutIdea {
+  --boxContainer-width: 80%;
+}
+
+.aboutIdea {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 標題 */
+.aboutIdea .title {
+  font-size: 2rem;
+  color: #1c3d5c;
+}
+.aboutIdea .separator {
+  width: 40%;
+  height: 2px;
+  background-color: #1c3d5c;
+  margin: 30px;
+}
+
+/* 主要內容 */
+.aboutIdea .boxContainer {
+  width: var(--boxContainer-width);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+/* 響應式 */
+/* 1360 */
+@media (max-width: 1360px) {
+  .aboutIdea {
+    --boxContainer-width: 90%;
+  }
+}
+/* 800 */
+@media (max-width: 800px) {
+  .aboutIdea .boxContainer {
+    gap: 20px;
+  }
+}

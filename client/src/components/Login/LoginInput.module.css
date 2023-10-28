@@ -1,0 +1,32 @@
+.inputContainer {
+  width: 400px;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: flex-start;
+  gap: 30px;
+  border-bottom: 1px solid #1c3d5c;
+  padding: 25px 10px 15px 20px;
+}
+.inputContainer label img {
+  width: 30px;
+  height: 30px;
+}
+.inputContainer input {
+  width: 80%;
+  border: none;
+  outline: none; /* 移除聚焦時的外框 */
+  font-size: 1.15rem;
+  letter-spacing: 0.1rem;
+}
+
+.inputWarning {
+  color: red;
+}
+
+/* 響應式 */
+/* 750 */
+@media (max-width: 750px) {
+  .inputContainer {
+    width: 300px;
+  }
+}

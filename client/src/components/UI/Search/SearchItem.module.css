@@ -1,0 +1,94 @@
+.searchItem {
+  width: 475px;
+  height: 120px;
+  background-color: #dbdbdb;
+  flex-shrink: 0; /* 這樣當容器沒有足夠的空間時，SearchItem 也不會縮小。 */
+  border-radius: 2.5px;
+  padding: 5px 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  position: relative;
+}
+.searchItem:hover {
+  background-color: #0071db;
+}
+.searchItem:hover .info span {
+  color: rgb(255, 255, 255);
+}
+
+/* 圖 */
+.searchItem .imgContainer {
+  height: 100%;
+  width: 65%;
+  clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+  overflow: hidden;
+}
+.searchItem .imgContainer img {
+  height: auto;
+  width: 100%;
+}
+
+/* 資訊 */
+.searchItem .info {
+  text-align: center;
+  width: 35%;
+  padding: 7px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.searchItem .info .itemName {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.searchItem .info .download {
+}
+
+/* 資訊 */
+.searchItem .hot {
+  font-size: 0.5rem;
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background-color: rgb(255, 36, 36);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+/* 響應式 */
+/* 620 */
+@media (max-width: 620px) {
+  .searchItem {
+    width: 425px;
+  }
+}
+/* 520 */
+@media (max-width: 520px) {
+  .searchItem {
+    width: 380px;
+  }
+}
+/* 470 */
+@media (max-width: 470px) {
+  .searchItem {
+    width: 290px;
+  }
+  /* 圖 */
+  .searchItem .imgContainer {
+    width: 60%;
+  }
+  .searchItem .imgContainer img {
+    width: 145%;
+  }
+  /* 資訊 */
+  .searchItem .info .itemName {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+}

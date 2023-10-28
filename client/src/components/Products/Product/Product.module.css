@@ -1,0 +1,51 @@
+.product {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  gap: 20px;
+}
+
+/* 背景圖 */
+.action {
+  background-image: url("../../../../public/images/UI/Product/TypeBg/action.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.avg {
+  background-image: url("../../../../public/images/UI/Product/TypeBg/avg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.slg {
+  background-image: url("../../../../public/images/UI/Product/TypeBg/slg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.strategy {
+  background-image: url("../../../../public/images/UI/Product/TypeBg/strategy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.esport {
+  background-image: url("../../../../public/images/UI/Product/TypeBg/esport.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* 響應式 */
+/* 580 */
+@media (max-width: 580px) {
+  .product {
+    padding: 0;
+    gap: 0;
+  }
+}

@@ -1,0 +1,61 @@
+.homeAboutItem {
+  /* 容器 */
+  --inSide_gap: 60px;
+  --inSide_padding-top: 40px;
+  --inSide_padding-bot: 15px;
+  /* 圖 */
+  --img_width: 550px;
+  /* 字 */
+  --text_font-size: 1.6rem;
+}
+
+.homeAboutItem {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  gap: var(--inSide_gap);
+  padding-top: var(--inSide_padding-top);
+  padding-bottom: var(--inSide_padding-bot);
+}
+
+.homeAboutItem img {
+  width: var(--img_width);
+  filter: brightness(85%);
+  border-radius: 5px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.homeAboutItem img:hover {
+  filter: brightness(100%);
+}
+
+.homeAboutItem .text {
+  font-size: var(--text_font-size);
+}
+
+/* 響應式 */
+/* 875 */
+@media (max-width: 875px) {
+  .homeAboutItem {
+    /* 容器 */
+    --inSide_gap: 75px;
+    --inSide_padding-top: 60px;
+    --inSide_padding-bot: 15px;
+    --img_width: 470px;
+    --text_font-size: 1.6rem;
+  }
+}
+/* 800 */
+@media (max-width: 800px) {
+  .homeAboutItem {
+    /* 容器 */
+    --inSide_gap: 75px;
+    --inSide_padding-top: 60px;
+    --inSide_padding-bot: 15px;
+    --img_width: 400px;
+    --text_font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,36 @@
+/* Home 的輪播圖設置 */
+
+/* HomeAbout */
+/* 次要內容 */
+/* 容器 */
+.HomeAbout_fullWidthSlider__kI-F3 .slick-slide {
+  position: relative;
+  z-index: 1;
+  filter: brightness(50%);
+}
+.HomeAbout_fullWidthSlider__kI-F3 .slick-slide span {
+  display: none;
+}
+/* 中央內容 */
+/* 容器 */
+.HomeAbout_fullWidthSlider__kI-F3 .slick-center {
+  position: relative;
+  z-index: 2;
+  filter: brightness(100%);
+  display: flex;
+  justify-content: center;
+}
+.HomeAbout_fullWidthSlider__kI-F3 .slick-center img {
+  transform: scale(1.2);
+  box-shadow: 0 0 7px black;
+}
+.HomeAbout_fullWidthSlider__kI-F3 .slick-center span {
+  display: block;
+}
+/* 535 */
+@media (max-width: 535px) {
+  .HomeAbout_fullWidthSlider__kI-F3 .slick-center img {
+    transform: scale(1.2);
+    box-shadow: none;
+  }
+}

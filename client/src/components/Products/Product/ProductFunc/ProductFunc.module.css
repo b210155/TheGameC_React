@@ -1,0 +1,51 @@
+.productFunc {
+  background-color: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 0 15px 8px black;
+  width: 75%;
+  min-width: 800px;
+  height: 600px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productFunc .notLogin {
+  margin: 0 auto;
+  font-size: 1.4rem;
+  color: white;
+}
+
+/* 響應式 */
+/* 860 */
+@media (max-width: 860px) {
+  .productFunc {
+    min-width: 750px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+/* 795 */
+@media (max-width: 795px) {
+  .productFunc {
+    min-width: 650px;
+  }
+}
+/* 685 */
+@media (max-width: 685px) {
+  .productFunc {
+    min-width: 550px;
+  }
+}
+/* 580 */
+@media (max-width: 580px) {
+  .productFunc {
+    min-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    padding-bottom: 25px;
+  }
+}

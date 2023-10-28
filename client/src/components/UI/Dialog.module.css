@@ -1,0 +1,55 @@
+.dialog {
+  --title_height: 40px;
+}
+
+.dialog {
+  position: fixed;
+  border-radius: 5px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 90%;
+  height: fit-content;
+  max-height: 90%;
+  z-index: 9000;
+  overflow-y: scroll;
+}
+.dialog::-webkit-scrollbar {
+  width: 0;
+}
+
+/* title */
+.dialog .title {
+  background-color: #0057a8;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: var(--title_height);
+  top: 0;
+  left: 0;
+  transition: top 0.25s;
+  position: fixed;
+}
+.dialog .title img {
+  width: 16px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.dialog .title img:hover {
+  filter: brightness(40%);
+}
+.dialog .title_block {
+  height: var(--title_height);
+}
+
+/* 內文 */
+.dialog .content {
+  height: 100%;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+}

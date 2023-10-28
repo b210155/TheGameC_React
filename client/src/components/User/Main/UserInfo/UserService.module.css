@@ -1,0 +1,86 @@
+.userService {
+  width: 100%;
+}
+
+/* 標題 / 按鈕 */
+.userService .title_btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* 標題 */
+.userService .title {
+  font-size: 1.1rem;
+  color: #1c3d5c;
+}
+
+/* 按鈕 */
+.userService .btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.userService .btnContainer button {
+  text-align: center !important;
+  font-size: 0.95rem;
+  padding: 7px 12px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.userService .btnContainer button:hover {
+  filter: brightness(80%);
+}
+.userService .btnContainer .editBtn {
+  background-color: #0071db;
+}
+.userService .btnContainer .submitBtn {
+  background-color: #22c25d;
+}
+
+/* 資料數 */
+.userService .amount {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+/* 分隔線 */
+.userService .separator {
+  width: 100%;
+  height: 1px;
+  background-color: #888888;
+  margin: 25px 0;
+}
+
+/* 客服表單處理狀況 */
+.userService .replyContainer {
+  height: fit-content;
+  max-height: 155px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+}
+
+/* 不可編輯 */
+.userService .allowEdit {
+  max-height: fit-content;
+}
+/* 不可送出 */
+.userService .notAllowSubmit {
+  user-select: none;
+  pointer-events: none;
+  filter: brightness(80%);
+}
+
+/* 響應式 */
+/* 510 */
+@media (max-width: 510px) {
+  /* 資料數 */
+  .userService .amount {
+    display: none;
+  }
+}

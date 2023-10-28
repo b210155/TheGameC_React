@@ -1,0 +1,86 @@
+.userProducts {
+  width: 100%;
+  height: fit-content;
+}
+
+/* 標題 */
+.userProducts .titleContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userProducts .title {
+  font-size: 1.1rem;
+  color: #1c3d5c;
+}
+.userProducts .amount {
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+
+.userProducts .smallTitle {
+  font-size: 1rem;
+  color: #888888;
+  margin-right: auto;
+}
+.userProducts .smallTilteContainer {
+  display: flex;
+  align-items: center;
+}
+/* 分隔線 */
+.userProducts .separator {
+  width: 100%;
+  height: 1px;
+  background-color: #888888;
+  margin: 25px 0;
+}
+
+/* 搜尋欄位 */
+.userProducts .searchBar {
+  margin-left: auto;
+  margin-bottom: 10px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.userProducts .searchBar img {
+  filter: brightness(40%);
+  width: 20px;
+}
+.userProducts .searchBar input {
+  width: 135px;
+  padding: 3px;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid #888888;
+  outline: none; /* 移除聚焦時的外框 */
+}
+.userProducts .searchBar button {
+  font-size: 0.8rem;
+  padding: 5px 9px;
+  border-radius: 5px;
+  color: white;
+  background-color: #0071db;
+  border: none;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.userProducts .searchBar button:hover {
+  filter: brightness(80%);
+}
+
+/* 商品容器 */
+.userProducts .itemContainer {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  flex-wrap: wrap;
+}
+
+/* 沒商品 */
+.userProducts .noProduct {
+  margin: 0 auto;
+}

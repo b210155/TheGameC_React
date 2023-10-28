@@ -1,0 +1,162 @@
+.productRecommend {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.productRecommend .title {
+  font-size: 1.15rem;
+  color: rgb(255, 255, 255);
+}
+
+.productRecommend .productContainer {
+  width: 95%;
+  background-color: rgb(41, 41, 58);
+  padding: 15px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 商品 */
+.productRecommend .productContainer .product {
+  margin: 0 auto;
+  width: 95%;
+  background-color: rgb(7, 7, 7);
+  padding: 7px;
+  border-radius: 7px;
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.productRecommend .productContainer .product:hover {
+  margin: 0 auto;
+  width: 95%;
+  background-color: rgb(21, 21, 21);
+  padding: 7px;
+  border-radius: 7px;
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
+
+/* 圖片 */
+.productRecommend .productContainer .product .imgContainer {
+  width: 35%;
+  height: 125px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: black;
+}
+.productRecommend .productContainer .product .imgContainer img {
+  height: 100%;
+  width: auto;
+}
+
+/* 內文 */
+.productRecommend .productContainer .product .info {
+  width: 65%;
+  height: 125px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* gap: 5px; */
+}
+
+.productRecommend .productContainer .product .info h2 {
+  font-size: 1.1rem;
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
+.productRecommend .productContainer .product .info .descriptionContainer {
+  font-size: 0.85rem;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.productRecommend .productContainer .product .info .descriptionContainer span {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 響應式 */
+/* 1185 */
+@media (max-width: 1185px) {
+  .productRecommend {
+    width: 65%;
+  }
+}
+
+/* 860 */
+@media (max-width: 860px) {
+  .productRecommend {
+    width: 90%;
+    height: 70%;
+    align-items: center;
+  }
+}
+/* 685 */
+@media (max-width: 685px) {
+  .productRecommend {
+    width: 95%;
+    height: 70%;
+    align-items: center;
+  }
+  /* 圖片 */
+  .productRecommend .productContainer .product .imgContainer {
+    width: 50%;
+    height: 125px;
+  }
+  .productRecommend .productContainer .product .imgContainer img {
+    height: 115%;
+    width: auto;
+  }
+  /* 內文 */
+  .productRecommend .productContainer .product .info {
+    width: 50%;
+  }
+}
+/* 500 */
+@media (max-width: 500px) {
+  /* 圖片 */
+  .productRecommend .productContainer .product .imgContainer {
+    width: 70%;
+    height: 125px;
+  }
+  .productRecommend .productContainer .product .imgContainer img {
+    height: auto;
+    width: 160%;
+  }
+  /* 內文 */
+  .productRecommend .productContainer .product .info {
+    width: 30%;
+  }
+  .productRecommend .productContainer .product .info h2 {
+    overflow-x: auto;
+    height: fit-content;
+    width: 80px;
+    font-size: 1rem;
+  }
+  .productRecommend .productContainer .product .info h2::-webkit-scrollbar {
+    width: 0;
+  }
+  .productRecommend .productContainer .product .info .descriptionContainer {
+    display: none;
+  }
+}

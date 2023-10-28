@@ -1,0 +1,71 @@
+/* var */
+.userPItem {
+  /* item 寬 */
+  --item_width: calc(33.3333% - 20px); /* 減去左右的 margin 總和 */
+  /* item 高 */
+  --item_height: 200px;
+  /* 圖長寬 */
+  --img_width: auto;
+  --img_height: 105%;
+}
+
+.userPItem {
+  box-shadow: 2px 2px 5px 1px rgb(78, 78, 78);
+  width: var(--item_width); /* 減去左右的 margin 總和 */
+  height: var(--item_height);
+  margin: 15px 10px; /* 調整左右 margin 為 10px */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.userPItem:hover {
+  filter: brightness(70%);
+}
+
+.userPItem .imgContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userPItem .imgContainer img {
+  width: var(--img_width);
+  height: var(--img_height);
+}
+
+/* 響應式 */
+/* 850 */
+@media (max-width: 1000px) {
+  .userPItem {
+    --item_width: 45%;
+    --item_height: 200px;
+    --img_width: auto;
+    --img_height: 120%;
+    margin: 15px auto;
+  }
+}
+/* 680 */
+@media (max-width: 680px) {
+  .userPItem {
+    --item_width: 80%;
+    --item_height: 135px;
+    --img_width: 100%;
+    --img_height: auto;
+    min-width: 370px;
+  }
+}
+/* 530 */
+@media (max-width: 530px) {
+  .userPItem {
+    --item_width: 70%;
+    --item_height: 120px;
+    --img_width: 100%;
+    --img_height: auto;
+    min-width: 290px;
+  }
+}

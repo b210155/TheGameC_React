@@ -1,0 +1,102 @@
+.footer {
+  width: 100%;
+  height: 185px;
+  background-color: #1c3d5c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+/* 黑色背景版本 */
+.BgColorBlack {
+  background-color: black;
+}
+
+/* 基本資訊 */
+.footer .info {
+  width: 50%;
+  height: 100%;
+  padding-left: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 0.9rem;
+  gap: 10px;
+}
+.footer .info img {
+  width: 165px;
+}
+
+/* 連結 */
+.footer .link {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  gap: 5px;
+}
+.footer .link div {
+  width: 100px;
+  min-width: 30px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.footer .link div img {
+  width: 33px;
+  user-select: none;
+  transition: 0.2s;
+}
+.footer .link div:hover {
+  background-color: #153048;
+}
+.footer .link div:hover img {
+  filter: brightness(0);
+}
+
+/* 黑色背景版本 */
+.BgColorBlack .link div:hover {
+  background-color: gray;
+}
+
+/* 響應式 */
+@media (max-width: 830px) {
+  .footer {
+    height: 220px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  /* 資訊 */
+  .footer .info {
+    width: 100%;
+    padding: 0;
+    align-items: center;
+    font-size: 0.85rem;
+  }
+  .footer .info img {
+    width: 150px;
+  }
+  .footer .info .intro {
+    text-align: center;
+  }
+
+  /* 社群 */
+  .footer .link {
+    width: 100%;
+    gap: 25px;
+  }
+  .footer .link div {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+  }
+  .footer .link div img {
+    width: 28px;
+  }
+}

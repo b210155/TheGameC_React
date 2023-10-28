@@ -1,0 +1,49 @@
+.search {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: fit-content;
+  height: fit-content;
+  min-width: 600px;
+  max-height: 85%;
+  z-index: 9000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+/* 關閉按鈕 */
+.search .closeBtn {
+  width: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 12.5px;
+  right: 25px;
+}
+
+/* 響應式 */
+/* 620 */
+@media (max-width: 620px) {
+  /* 輸入 */
+  .search .closeBtn {
+    right: 70px;
+  }
+}
+/* 520 */
+@media (max-width: 520px) {
+  /* 輸入 */
+  .search .closeBtn {
+    right: 100px;
+  }
+}
+/* 470 */
+@media (max-width: 470px) {
+  /* 輸入 */
+  .search .closeBtn {
+    right: 125px;
+  }
+}

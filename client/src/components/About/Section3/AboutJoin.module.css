@@ -1,0 +1,183 @@
+/* var */
+.aboutJoin {
+  /* 主要內容 */
+  --main-width: 70%;
+  --main-height: 420px;
+  /* 圖片容器 */
+  --img-container_min-width: 500px;
+  --img-container_min-height: 90%;
+  /* 圖片 */
+  --img-width: auto;
+  --img-height: 100%;
+  /* 選擇器容器 */
+  --select-width: 35%;
+  /* 標題介紹文字大小 */
+  --title_content_font-size: 1.05rem;
+}
+
+.aboutJoin {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* 標題 */
+.aboutJoin .title {
+  font-size: 2rem;
+  color: #1c3d5c;
+}
+.aboutJoin .separator {
+  width: 40%;
+  height: 2px;
+  background-color: #1c3d5c;
+  margin: 30px;
+}
+.aboutJoin span {
+  color: #1c3d5c;
+  font-size: var(--title_content_font-size);
+}
+
+/* 主體 */
+.aboutJoin .main {
+  margin: 25px auto;
+  width: var(--main-width);
+  height: var(--main-height);
+  display: flex;
+  overflow: hidden;
+}
+/* 大圖 */
+.aboutJoin .main .imgContainer {
+  width: 60%;
+  min-width: var(--img-container_min-width);
+  height: var(--img-container_min-height);
+  margin: auto auto;
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aboutJoin .main .imgContainer img {
+  width: var(--img-width);
+  height: var(--img-height);
+}
+
+/* 選擇器 */
+.aboutJoin .selectContainer {
+  width: var(--select-width);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 響應式 */
+/* 1080 */
+@media (max-width: 1080px) {
+  .aboutJoin {
+    --main-width: 80%;
+    --main-height: fit-content;
+    --img-container_min-width: 650px;
+    --img-container_min-height: 350px;
+    --img-width: 100%;
+    --img-height: auto;
+    --select-width: 650px;
+  }
+  /* 主體 */
+  .aboutJoin .main {
+    flex-direction: column;
+    gap: 20px;
+  }
+  /* 選擇器 */
+  .aboutJoin .selectContainer {
+    width: var(--select-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+/* 850 */
+@media (max-width: 850px) {
+  .aboutJoin {
+    --main-width: 90%;
+    --main-height: fit-content;
+    --img-container_min-width: 600px;
+    --img-container_min-height: 350px;
+    --img-width: 110%;
+    --img-height: auto;
+    --select-width: 600px;
+  }
+}
+/* 750 */
+@media (max-width: 750px) {
+  .aboutJoin {
+    --main-width: 90%;
+    --main-height: fit-content;
+    --img-container_min-width: 85%;
+    --img-container_min-height: 350px;
+    --img-width: 120%;
+    --img-height: auto;
+    --select-width: 85%;
+    --title_content_font-size: 0.95rem;
+  }
+}
+/* 690 */
+@media (max-width: 690px) {
+  .aboutJoin {
+    --img-container_min-width: 520px;
+    --img-container_min-height: 320px;
+    --select-width: 520px;
+  }
+  /* 選擇器 */
+  .aboutJoin .selectContainer {
+    width: 85%;
+    min-width: var(--select-width);
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* 600 */
+@media (max-width: 600px) {
+  .aboutJoin {
+    --main-width: 100%;
+    --img-container_min-width: 460px;
+    --img-container_min-height: 300px;
+    --select-width: 460px;
+  }
+  /* 圖 */
+  .aboutJoin .main .imgContainer {
+    width: 85%;
+    min-width: var(--img-container_min-width);
+  }
+  /* 選擇器 */
+  .aboutJoin .selectContainer {
+    width: 85%;
+    min-width: var(--select-width);
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* 490 */
+@media (max-width: 490px) {
+  .aboutJoin {
+    --img-container_min-width: 300px;
+    --img-container_min-height: 250px;
+    --select-width: 300px;
+    --img-width: 150%;
+  }
+  /* 圖 */
+  .aboutJoin .main .imgContainer {
+    width: 85%;
+    min-width: var(--img-container_min-width);
+  }
+  /* 選擇器 */
+  .aboutJoin .selectContainer {
+    width: 85%;
+    min-width: var(--select-width);
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,127 @@
+.productComment {
+  width: 100%;
+  height: 180px;
+  background-color: rgb(41, 41, 58);
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+}
+
+/* 左邊區塊 */
+.productComment .left {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+/* 頭貼 */
+.productComment .imgContainer {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(7, 7, 7);
+  border: 5px solid rgb(28, 28, 28);
+  border-radius: 5px;
+}
+.productComment .imgContainer img {
+  height: 100%;
+  width: auto;
+}
+
+/* 名字 */
+.productComment .name {
+  font-size: 0.5rem;
+  color: white;
+}
+/* 日期 */
+.productComment .date {
+  font-size: 0.5rem;
+  color: white;
+}
+
+/* 評分 */
+.productComment .rate {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  color: white;
+  background-color: rgba(7, 7, 7, 0.5);
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+/* 分隔線 */
+.productComment .separate {
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 右邊區域 */
+.productComment .right {
+  width: 70%;
+  height: 95%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+/* 評論 */
+.productComment .comment {
+  width: 100%;
+  height: 80%;
+  font-size: 1.05rem;
+  letter-spacing: 0.1rem;
+  padding: 7px;
+  user-select: none;
+  pointer-events: none;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  color: white;
+}
+
+.productComment .title {
+  color: white;
+}
+
+/* 響應式 */
+/* 1185 */
+@media (max-width: 1185px) {
+  .productComment .title {
+    display: none;
+  }
+  .productComment .comment {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* 960 */
+@media (max-width: 960px) {
+  .productComment .comment {
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+  }
+}
+/* 500 */
+@media (max-width: 500px) {
+  /* 頭貼 */
+  .productComment .imgContainer {
+    width: 50px;
+    height: 50px;
+  }
+  /* 右邊區塊 */
+  .productComment .right {
+    height: 100%;
+  }
+}

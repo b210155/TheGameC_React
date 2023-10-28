@@ -1,0 +1,126 @@
+.productRate {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productRate .title {
+  font-size: 1.15rem;
+  color: rgb(255, 255, 255);
+}
+
+/* 評分 */
+.productRate .rating {
+  width: 90%;
+  margin: 0 auto;
+  background-color: rgb(41, 41, 58);
+  padding: 20px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+.productRate .rating select {
+  font-size: 1.15rem;
+  padding: 1px 15px 1px 3px;
+  border-radius: 3px;
+}
+
+/* 評論 */
+.productRate .comment {
+  width: 90%;
+  margin: 0 auto;
+  background-color: rgb(41, 41, 58);
+  padding: 20px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.productRate .comment textarea {
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  font-size: 1.15rem;
+  letter-spacing: 0.1rem;
+  resize: none;
+}
+
+/* 按鈕 */
+/* 修改、刪除 */
+.productRate .comment .btnContainer {
+  display: flex;
+  width: 100%;
+}
+.productRate .comment .btnContainer div {
+  display: flex;
+  gap: 10px;
+}
+
+.productRate .comment button {
+  border: 1px solid white;
+  border-radius: 7px;
+  background-color: rgb(7, 7, 7);
+  padding: 7px 15px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: auto;
+}
+.productRate .comment button:hover {
+  background-color: rgb(220, 220, 220);
+  color: rgb(7, 7, 7);
+}
+
+/* 已評分/尚未評分 */
+.productRate .rating .rateExists {
+  margin-left: auto;
+  color: lightgreen;
+}
+.productRate .rating .rateNotExists {
+  margin-left: auto;
+  color: lightcoral;
+}
+
+.productRate .comment .notAllow {
+  filter: brightness(40%);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* 響應式 */
+/* 1185 */
+@media (max-width: 1185px) {
+  .productRate {
+    width: 65%;
+  }
+}
+
+/* 860 */
+@media (max-width: 860px) {
+  .productRate {
+    width: 100%;
+    height: 70%;
+  }
+  .productRate .title {
+    font-size: 1rem;
+  }
+  .productRate .rating {
+    padding: 15px;
+    gap: 10px;
+  }
+}
+/* 685 */
+@media (max-width: 685px) {
+  .productRate .rating {
+    padding: 15px;
+    gap: 10px;
+  }
+  .productRate .comment textarea {
+    height: 290px;
+  }
+}

@@ -1,0 +1,15 @@
+.loginPage {
+  display: flex;
+  /* height: 100vh; */
+  overflow: hidden; /* 隱藏滾動條 */
+  position: relative;
+}
+
+/* 響應式 */
+/* 寬度小於875px */
+@media (max-width: 875px) {
+  .loginPage {
+    display: flex;
+    flex-direction: column;
+  }
+}

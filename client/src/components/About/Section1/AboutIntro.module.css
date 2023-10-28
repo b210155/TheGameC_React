@@ -1,0 +1,20 @@
+.aboutIntro {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  /* 背景  */
+  position: relative;
+  background-image: url("../../../../public/images/UI/background/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+}
+/* 遮罩 */
+.aboutIntro .bgFilter {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.65);
+}

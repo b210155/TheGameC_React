@@ -1,0 +1,188 @@
+.aboutIdeaBox {
+  --box-width: 30%;
+  --box-min-width: 300px;
+  --box-height: 390px;
+  --img-heigh: 100%;
+  --img-width: auto;
+}
+
+.aboutIdeaBox {
+  width: var(--box-width);
+  min-width: var(--box-min-width);
+  height: var(--box-height);
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.2s;
+}
+
+/* 圖、遮罩 */
+.aboutIdeaBox img {
+  height: var(--img-heigh);
+  width: var(--img-width);
+  position: absolute;
+  z-index: 0;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+.aboutIdeaBox:hover img {
+  filter: blur(2px);
+}
+/* 一般遮罩 */
+.aboutIdeaBox .mask_black {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  position: absolute;
+  z-index: 1;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(149, 220, 255, 0.1) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  transition: 0.2s;
+}
+.aboutIdeaBox:hover .mask_black {
+  background: rgb(0, 0, 0, 0.8);
+}
+
+/* 內文容器 */
+.aboutIdeaBox .textContainer {
+  width: 100%;
+  height: 100%;
+  color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+/* 標題 */
+.aboutIdeaBox .textContainer .titleBox {
+  width: fit-content;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.aboutIdeaBox .textContainer .titleBox .title {
+  font-size: 1.5rem;
+  text-shadow: 0 0 6px black;
+  letter-spacing: 0.4rem;
+  padding: 0 15px 10px 15px;
+  border-bottom: 3px solid #2897ff;
+}
+
+/* 內文 */
+.aboutIdeaBox .textContainer .contentBox {
+  width: 100%;
+  height: 0;
+  /* padding: 25px; */
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.6rem;
+  letter-spacing: 0.1rem;
+  transition: 0.15s;
+  overflow-y: scroll;
+}
+.aboutIdeaBox .textContainer .contentBox::-webkit-scrollbar {
+  width: 0;
+}
+
+.aboutIdeaBox:hover .contentBox {
+  min-height: 75%;
+  padding: 25px;
+  padding-top: 0;
+}
+
+/* 響應式 */
+/* 1175 */
+@media (max-width: 1176px) {
+  .aboutIdeaBox {
+    --box-width: 25%;
+    --box-min-width: 275px;
+  }
+}
+/* 1090 */
+@media (max-width: 1095px) {
+  .aboutIdeaBox {
+    --box-width: 45%;
+    --box-min-width: 300px;
+    --img-heigh: auto;
+    --img-width: 120%;
+  }
+  /* 內文 */
+  .aboutIdeaBox .textContainer .contentBox {
+    line-height: 2rem;
+  }
+}
+/* 900 */
+@media (max-width: 900px) {
+  .aboutIdeaBox {
+    --img-width: 130%;
+  }
+  /* 內文 */
+  .aboutIdeaBox .textContainer .contentBox {
+    line-height: 1.7rem;
+  }
+}
+/* 800 */
+@media (max-width: 800px) {
+  .aboutIdeaBox {
+    --box-width: 100%;
+    --box-height: 125px;
+  }
+  /* 遮罩 */
+  .aboutIdeaBox .mask_black {
+    background: radial-gradient(
+      circle,
+      rgba(149, 220, 255, 0.1) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+  /* 文字容器大小 */
+  .aboutIdeaBox .textContainer {
+    padding: 20px;
+    gap: 15px;
+  }
+  /* 標題 */
+  .aboutIdeaBox .textContainer .titleBox {
+    height: 100%;
+  }
+  /* 內文 */
+  .aboutIdeaBox .textContainer .contentBox {
+    height: 0;
+  }
+  .aboutIdeaBox:hover {
+    height: 250px;
+  }
+  .aboutIdeaBox:hover .contentBox {
+    height: 200px;
+  }
+}
+/* 560 */
+@media (max-width: 560px) {
+  .aboutIdeaBox {
+    --box-height: 100px;
+  }
+  .aboutIdeaBox .textContainer {
+    padding: 20px 10px;
+  }
+}
+/* 500 */
+@media (max-width: 500px) {
+  .aboutIdeaBox {
+    --box-height: 75px;
+  }
+  .aboutIdeaBox .textContainer {
+    padding: 20px 5px;
+  }
+}

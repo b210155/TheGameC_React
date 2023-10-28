@@ -1,0 +1,21 @@
+/* var */
+.UserMainContent {
+  --main-width: 75%;
+}
+
+.UserMainContent {
+  width: var(--main-width);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* 響應式 */
+/* 1160 */
+@media (max-width: 1160px) {
+  .UserMainContent {
+    --main-width: 90%;
+    margin: 0 auto;
+  }
+}

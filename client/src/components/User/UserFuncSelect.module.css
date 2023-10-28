@@ -1,0 +1,102 @@
+/* var */
+.UserFuncSelect,
+.UserFuncSelect_block {
+  --main-width: 20%;
+  transition: 0.2s;
+}
+
+.UserFuncSelect_block {
+  width: var(--main-width);
+  height: 1px;
+}
+
+.UserFuncSelect {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 40px;
+  height: 100vh;
+  width: var(--main-width);
+  min-width: 200px;
+  background-color: white;
+  padding: 70px 0;
+  margin-top: -50px;
+  position: fixed;
+  z-index: 1;
+  overflow-y: scroll;
+}
+.UserFuncSelect::-webkit-scrollbar {
+  width: 0;
+}
+
+.UserFuncSelect button {
+  width: fit-content;
+  height: fit-content;
+  padding: 15px;
+  width: 150px;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.UserFuncSelect button:hover {
+  border-right: 6px solid #0071db;
+  font-weight: 600;
+}
+
+.UserFuncSelect .funcSelect {
+  border-right: 5px solid #0071db;
+  font-weight: 600;
+}
+
+/* 顯示選單 */
+/* 配合 JSX .UserFuncSelect 的三元運算設定，必須是 dont 放前面 */
+.dontShowFuncSelect {
+  display: none;
+}
+.showFuncSelect {
+  display: flex;
+}
+
+/* 開關箭頭按鈕 */
+.showFuncSelectBtn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  z-index: 2;
+  top: 75px;
+  left: 25px;
+  cursor: pointer;
+}
+.openFuncSelect {
+}
+.closeFuncSelect {
+  transform: scaleX(-1);
+}
+
+/* 響應式 */
+/* 1160 */
+@media (max-width: 1160px) {
+  /* 選單 */
+  .UserFuncSelect {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+  /* 選單按鈕 */
+  .UserFuncSelect button {
+    background-color: transparent;
+  }
+  /* 顯示箭頭按鈕 */
+  .showFuncSelectBtn {
+    display: block;
+  }
+}
+/* 875 */
+/* Nav消失 */
+@media (max-width: 875px) {
+  .UserFuncSelect {
+    padding-top: 130px; /* 原先70 + Nav60 */
+  }
+}

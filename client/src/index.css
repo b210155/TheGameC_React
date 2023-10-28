@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 字體 */
+body {
+  font-family: "Microsoft YaHei", sans-serif;
+  letter-spacing: 2px;
+  min-height: 100%;
+}
+body p {
+  letter-spacing: 1px;
+}

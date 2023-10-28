@@ -1,0 +1,218 @@
+.productInfo {
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 75%;
+  min-width: 800px;
+  height: 600px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 15px 8px black;
+}
+
+/* 圖 */
+.productInfo .imgContainer {
+  width: 550px;
+  height: 450px;
+  background-color: black;
+  clip-path: polygon(90% 0, 100% 10%, 100% 90%, 90% 100%, 0 100%, 0% 0%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.productInfo .imgContainer img {
+  height: auto;
+  width: 100%;
+}
+
+/* 內文容器 */
+.infoContainer {
+  width: 50%;
+  height: 500px;
+  padding: 0 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 標題 */
+.infoContainer .title {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(41, 41, 58);
+  clip-path: polygon(100% 0%, 100% 100%, 10% 100%, 0% 50%, 10% 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.infoContainer .title span {
+  font-size: 1.4rem;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
+  color: white;
+}
+
+.infoContainer .type {
+  width: fit-content;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  padding: 3px 9px;
+  border-radius: 15px;
+}
+
+/* 資訊 */
+.infoContainer .info {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto 0;
+  margin-left: auto;
+  color: white;
+  padding: 15px;
+  padding-top: 0;
+  gap: 15px;
+}
+/* 介紹 */
+.infoContainer .description {
+  height: 25%;
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+  overflow-y: scroll;
+  /* scroll 樣式 */
+  scrollbar-width: none; /* Firefox */
+}
+/* scroll 樣式 Chrome、Safari */
+.infoContainer .description::-webkit-scrollbar {
+  width: 0;
+}
+
+/* 開發、營運、年齡、購買人數 */
+.infoContainer .detail {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  gap: 7px;
+}
+
+/* 價格 */
+.infoContainer .cost {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* 購買按鈕 */
+.cartBtn {
+  width: fit-content;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 7px 15px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: 0.1s;
+  margin: 0 auto;
+}
+.cartBtn:hover {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+}
+/* 按鈕(未登入) */
+.notAllowCartBtn {
+  width: fit-content;
+  padding: 7px 15px;
+  font-size: 1.05rem;
+  color: white;
+  margin: 0 auto;
+  user-select: none;
+}
+
+/* 響應式 */
+/* 860 */
+@media (max-width: 860px) {
+  .productInfo {
+    flex-direction: column;
+    height: 870px;
+    min-width: 750px;
+    padding: 55px 0;
+    gap: 30px;
+  }
+  /* 圖 */
+  .productInfo .imgContainer {
+    width: 550px;
+    height: 500px;
+    clip-path: none;
+  }
+  .productInfo .imgContainer img {
+    height: 120%;
+    width: auto;
+  }
+  /* 內文容器 */
+  .infoContainer {
+    width: 100%;
+    padding: 0;
+  }
+  /* 標題 */
+  .infoContainer .title {
+    width: 75%;
+    height: 45px;
+    margin: 0 auto;
+    clip-path: none;
+  }
+  .infoContainer .title span {
+    font-size: 1.2rem;
+  }
+  /* 資訊 */
+  .infoContainer .info {
+    width: 80%;
+    margin: auto auto;
+  }
+}
+/* 795 */
+@media (max-width: 795px) {
+  .productInfo {
+    min-width: 650px;
+  }
+  /* 圖 */
+  .productInfo .imgContainer {
+    width: 500px;
+  }
+}
+/* 685 */
+@media (max-width: 685px) {
+  .productInfo {
+    min-width: 550px;
+  }
+  /* 圖 */
+  .productInfo .imgContainer {
+    width: 400px;
+    height: 350px;
+  }
+}
+/* 580 */
+@media (max-width: 580px) {
+  .productInfo {
+    min-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  /* 圖 */
+  .productInfo .imgContainer {
+    width: 75%;
+    height: 350px;
+  }
+  .cartBtn {
+    margin: 15px auto;
+    margin-bottom: 0;
+  }
+}

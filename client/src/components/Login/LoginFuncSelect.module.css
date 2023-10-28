@@ -1,0 +1,73 @@
+.loginFuncSelect {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 30%;
+  height: 100vh;
+  padding: 0 0 100px 0;
+  background-image: url("../../../public/images/UI/background/background_blue.svg");
+  position: fixed;
+}
+
+.block {
+  width: 30%;
+}
+
+.loginFuncSelect button {
+  width: fit-content;
+  height: fit-content;
+  padding: 45px 50px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 5px rgb(110, 110, 110);
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.loginFuncSelect button:hover {
+  color: #1c3d5c;
+  background-color: rgb(230, 230, 230);
+  text-shadow: none;
+}
+
+.loginFuncSelect .funcSelect {
+  color: #1c3d5c;
+  background-color: white;
+  text-shadow: none;
+}
+
+/* 響應式 */
+/* 875 */
+@media (max-width: 875px) {
+  .loginFuncSelect {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    height: 10vh;
+    padding-bottom: 90px;
+    /* 背景 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .block {
+    width: 100%;
+    height: 15vh;
+  }
+  .loginFuncSelect button {
+    width: fit-content;
+    height: 100%;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loginFuncSelect .funcSelect {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}

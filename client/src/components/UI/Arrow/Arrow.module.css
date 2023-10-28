@@ -1,0 +1,42 @@
+.arrow {
+  --container_width-height: 45px;
+  --container_padding: 2px;
+  --img_width-height: 25px;
+  --img_shadow: drop-shadow(0 0 2px rgba(255, 255, 255, 0.6));
+}
+
+/* 箭頭 */
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: var(--container_width-height);
+  height: var(--container_width-height);
+  border-radius: 60%;
+  border: 1px solid rgb(128, 128, 128, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+.arrow_next {
+  right: 0;
+  padding-left: var(--container_padding);
+}
+.arrow_prev {
+  left: 0;
+  padding-right: var(--container_padding);
+}
+
+/* 箭頭樣式 */
+.arrow img {
+  /* transform: rotate(90deg); */
+  width: var(--img_width-height);
+  filter: var(--img_shadow);
+}
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}

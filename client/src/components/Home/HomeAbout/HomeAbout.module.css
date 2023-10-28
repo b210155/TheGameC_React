@@ -1,0 +1,60 @@
+/* var */
+.homeAbout {
+  --title_font-size: 2rem;
+  --text_font-size: 1.2rem;
+  --main_gap: 35px; /* 間距：title vs main */
+}
+
+.homeAbout {
+  width: 100%;
+  height: 700px;
+  margin-top: -50px;
+  padding: 40px 0;
+  color: white;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 8px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--main_gap);
+  /* 背景 */
+  position: relative;
+  background-image: url("../../../../public/images/UI/background/background_cyber_gray.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+}
+
+/* 標題 */
+.homeAbout .titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.homeAbout .title {
+  font-size: var(--title_font-size);
+}
+.homeAbout .text {
+  font-size: var(--text_font-size);
+}
+
+/* 主要內容 */
+.homeAbout .mainContainer {
+  width: 100%;
+}
+
+/* 輪播圖 */
+.homeAbout .fullWidthSlider {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* 800 */
+@media (max-width: 800px) {
+  .homeAbout .titleContainer {
+    padding-top: 25px;
+  }
+}

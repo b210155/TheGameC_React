@@ -1,0 +1,90 @@
+/* var */
+.aboutJoinSelect {
+  --select-width: fit-content; /* 選擇器寬 */
+  --select-height: fit-content; /* 選擇器高 */
+  --select_padding: 20px; /* 選擇器們間距  */
+  --img_padding-left: 65px; /* 選擇器與圖間距(左右) */
+  --content_font-size: 0.85rem; /* 內文大小 */
+  --box_background-color: rgb(221, 221, 221); /* 內文背景色 */
+  --transition_time: 0.4s;
+}
+
+.aboutJoinSelect {
+  width: var(--select-width);
+  height: var(--select-height);
+  padding: var(--select_padding);
+  padding-left: var(--img_padding-left);
+}
+
+/* 標題 */
+.aboutJoinSelect .title {
+  font-size: 1.2rem;
+  padding: 8px 20px;
+  border-left: 5px solid #0071db;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: var(--transition_time);
+}
+.aboutJoinSelect .title:hover {
+  background-color: var(--box_background-color);
+}
+
+/* 內文 */
+.aboutJoinSelect .contentBox {
+  font-size: var(--content_font-size);
+  background-color: var(--box_background-color);
+  border-radius: 5px;
+  overflow: hidden;
+  height: 0;
+  transition: var(--transition_time);
+}
+
+.aboutJoinSelect .title:hover + .contentBox {
+  height: fit-content;
+  padding: 10px;
+}
+
+/* 1130 */
+@media (max-width: 1130px) {
+  .aboutJoinSelect {
+    --select_padding: 17px;
+  }
+}
+/* 1080 */
+@media (max-width: 1080px) {
+  .aboutJoinSelect {
+    --select-width: 100%; /* 標題寬 */
+    --select-height: fit-content; /* 標題高 */
+    --select_padding: 20px; /* 標題們間距 */
+    --img_padding-left: 0; /* 標題與圖間距 */
+    --content_font-size: 1rem;
+  }
+  .aboutJoinSelect .title {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    background-color: var(--box_background-color);
+    width: 175px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* 690 */
+@media (max-width: 690px) {
+  .aboutJoinSelect {
+    --select_padding: 15px; /* 選擇器們間距 */
+  }
+  .aboutJoinSelect .title {
+    font-size: 1.1rem;
+  }
+}
+/* 600 */
+@media (max-width: 600px) {
+  .aboutJoinSelect {
+    --select_padding: 10px; /* 選擇器們間距 */
+  }
+}

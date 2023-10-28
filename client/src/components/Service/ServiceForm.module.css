@@ -1,0 +1,135 @@
+.serviceForm {
+  width: 65%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  border-radius: 15px;
+  gap: 40px;
+}
+
+.serviceForm .title {
+  font-size: 1.3rem;
+  letter-spacing: 0.3rem;
+  color: #1c3d5c;
+}
+
+.serviceForm .inputContainer {
+  width: 100%;
+  min-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+/* 問題類別選擇 */
+.serviceForm .inputContainer select {
+  width: 100%;
+  text-align: center;
+  color: gray;
+  padding: 8px;
+  font-size: 1.1rem;
+  border: 1px solid #1c3d5c;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* 主旨 */
+.serviceForm .inputContainer input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  border: 1px solid #1c3d5c;
+  border-radius: 5px;
+  outline: none;
+}
+/* placeHolder 置中，且設為灰色 */
+.serviceForm .inputContainer input::placeholder {
+  text-align: center;
+  color: gray;
+}
+
+/* 說明 */
+.serviceForm .inputContainer textarea {
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  font-size: 1.1rem;
+  border: 1px solid #1c3d5c;
+  border-radius: 5px;
+  letter-spacing: 0.1rem;
+  line-height: 1.3;
+  outline: none;
+  resize: none;
+}
+.serviceForm .inputContainer textarea::placeholder {
+  text-align: center;
+  color: gray;
+  line-height: 225px;
+}
+
+/* 提交按鈕 */
+.serviceForm .submitBtn {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 35px;
+  background-color: #0071db;
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  color: white;
+  transition: 0.15s;
+}
+.serviceForm .submitBtn:hover {
+  filter: brightness(70%);
+}
+
+/* 未登入 */
+.serviceForm .noAllow {
+  filter: brightness(50%);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* 響應式 */
+/* 850 */
+@media (max-width: 800px) {
+  .serviceForm .inputContainer {
+    min-width: 600px;
+  }
+}
+/* 720 */
+@media (max-width: 720px) {
+  .serviceForm .inputContainer {
+    min-width: 500px;
+  }
+}
+/* 600 */
+@media (max-width: 600px) {
+  .serviceForm .inputContainer {
+    min-width: 400px;
+  }
+  .serviceForm .inputContainer textarea {
+    height: 300px;
+  }
+}
+/* 512 */
+@media (max-width: 512px) {
+  .serviceForm .inputContainer {
+    align-items: center;
+  }
+  .serviceForm .inputContainer .title {
+    font-size: 1.15rem;
+  }
+}
+/* 440 */
+@media (max-width: 440px) {
+  .serviceForm .inputContainer {
+    min-width: 300px;
+  }
+  .serviceForm .inputContainer textarea {
+    height: 325px;
+  }
+}

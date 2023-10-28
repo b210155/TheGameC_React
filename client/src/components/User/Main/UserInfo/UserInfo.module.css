@@ -1,0 +1,14 @@
+.userInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+/* 800 */
+@media (max-width: 800px) {
+  .userInfo {
+    gap: 75px;
+  }
+}

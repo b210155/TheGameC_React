@@ -1,0 +1,57 @@
+.aboutIntroInfo {
+  height: 100%;
+  width: 670px;
+  color: #1c3d5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  margin-left: 150px;
+  gap: 30px;
+  overflow-y: scroll;
+}
+.aboutIntroInfo::-webkit-scrollbar {
+  width: 0;
+}
+
+.aboutIntroInfo .title {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.aboutIntroInfo .text {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.aboutIntroInfo .textFaded {
+  font-size: 1.15rem;
+  color: rgba(28, 61, 92, 0.7);
+  line-height: 1.8rem;
+}
+
+/* 響應式 */
+/* 875 */
+@media (max-width: 875px) {
+  .aboutIntroInfo {
+    margin-left: 0;
+    width: 100%;
+    padding: 30px 60px;
+  }
+}
+/* 580 */
+@media (max-width: 580px) {
+  .aboutIntroInfo .title {
+    font-size: 2.8rem;
+    font-weight: 600;
+  }
+  .aboutIntroInfo .text {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  }
+  .aboutIntroInfo .textFaded {
+    font-size: 0.95rem;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  }
+}

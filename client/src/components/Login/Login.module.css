@@ -1,0 +1,92 @@
+.Login {
+  width: 70%;
+  height: 100vh;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  overflow: auto;
+}
+
+.Login .logo {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #1c3d5c;
+}
+
+/* 填寫 */
+.Login .loginForm {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px 0;
+}
+
+.Login .loginForm .loginBtn {
+  width: 30%;
+  min-width: 175px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 11px 35px;
+  border-radius: 10px;
+  background-color: #0071db;
+  box-shadow: 0 2px 5px 3px rgb(200, 200, 200);
+  color: white;
+  font-weight: 600;
+  border: none;
+  margin-top: 35px;
+  margin-bottom: -20px;
+  transition: 0.15s;
+}
+.Login .loginForm .loginBtn:hover {
+  filter: brightness(85%);
+}
+
+.Login .forgetPassword {
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 10px 65px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: 0.15s;
+}
+.Login .forgetPassword:hover {
+  background-color: rgb(222, 222, 222);
+}
+
+/* 響應式 */
+/* 寬度小於928px */
+@media (max-width: 928px) {
+  .Login .loginForm .loginBtn {
+    width: 30%;
+    font-size: 1rem;
+    padding: 11px 15px;
+  }
+  .Login .forgetPassword {
+    font-size: 1rem;
+  }
+}
+/* 875 ! */
+@media (max-width: 875px) {
+  .Login {
+    width: 100%;
+  }
+}
+/* 500 */
+@media (max-width: 500px) {
+  .Login .logo {
+    font-size: 2rem;
+  }
+}
+
+/* heigh：700 */
+@media (max-height: 700px) {
+  .Login {
+    height: 700px;
+  }
+}

@@ -1,0 +1,71 @@
+.Logout {
+  width: 70%;
+  height: 100vh;
+  margin: auto 0;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -75px;
+  gap: 65px;
+}
+
+.Logout .logo {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #1c3d5c;
+}
+
+.Logout span {
+  font-size: 1.5rem;
+}
+
+.Logout button {
+  width: 200px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 10px 25px;
+  border-radius: 10px;
+  background-color: #0071db;
+  color: white;
+  font-weight: 600;
+  border: none;
+  transition: 0.15s;
+}
+.Logout button:hover {
+  filter: brightness(85%);
+}
+
+.Logout .userName {
+  color: #0071db;
+  font-weight: 600;
+  cursor: pointer;
+}
+.Logout .userName:hover {
+  filter: brightness(70%);
+}
+
+/* 響應式 */
+/* 875 ! */
+@media (max-width: 875px) {
+  .Logout {
+    width: 100%;
+  }
+}
+/* 500 */
+@media (max-width: 500px) {
+  .Logout .logo {
+    font-size: 2rem;
+  }
+  .Logout span {
+    font-size: 1.3rem;
+  }
+}
+
+/* height:500 */
+@media (max-height: 500px) {
+  .Logout {
+    height: 500px;
+  }
+}

@@ -1,0 +1,62 @@
+.UserInfoEditForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px 30px 25px;
+  gap: 15px;
+}
+
+.UserInfoEditForm .logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1c3d5c;
+  margin-bottom: 15px;
+}
+
+.UserInfoEditForm ul {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 25px;
+}
+.UserInfoEditForm li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: #1c3d5c;
+}
+
+.UserInfoEditForm input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #1c3d5c;
+  outline: none; /* 移除聚焦時的外框 */
+  letter-spacing: 0.1rem;
+  font-size: 1.1rem;
+}
+
+/* 確認更改按鈕 */
+.UserInfoEditForm .confirmBtn {
+  width: 30%;
+  min-width: 120px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 11px 20px;
+  border-radius: 5px;
+  background-color: #0071db;
+  color: white;
+  border: none;
+  margin-top: 35px;
+  transition: 0.1s;
+}
+.UserInfoEditForm .confirmBtn:hover {
+  filter: brightness(85%);
+}

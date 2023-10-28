@@ -1,0 +1,94 @@
+.Register {
+  width: 70%;
+  margin: 75px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.Register .logo {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #1c3d5c;
+}
+
+/* 填寫 */
+.Register form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.Register form div {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.Register form div .section {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.Register form .registerBtn {
+  width: 30%;
+  min-width: 175px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 11px 35px;
+  border-radius: 10px;
+  background-color: #0071db;
+  box-shadow: 0 2px 5px 3px rgb(200, 200, 200);
+  color: white;
+  font-weight: 600;
+  border: none;
+  margin-top: 35px;
+  transition: 0.1s;
+}
+.Register form .registerBtn:hover {
+  filter: brightness(85%);
+}
+
+/* 響應式 */
+/* 1080 */
+@media (max-width: 1070px) {
+  .Register form div {
+    width: 100%;
+    flex-direction: column;
+  }
+  .Register form div .section {
+    gap: 25px;
+  }
+}
+
+/* 928 btn */
+@media (max-width: 928px) {
+  .Register form .registerBtn {
+    width: 30%;
+    font-size: 1rem;
+    padding: 11px 20px;
+  }
+}
+/* 875 ! */
+@media (max-width: 875px) {
+  .Register {
+    width: 100%;
+    margin: 75px 0;
+  }
+}
+/* 500 */
+@media (max-width: 500px) {
+  .Register .logo {
+    font-size: 2rem;
+  }
+}

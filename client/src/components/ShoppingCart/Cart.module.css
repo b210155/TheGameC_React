@@ -1,0 +1,119 @@
+.Cart {
+  padding: 0 50px;
+}
+
+/* 標題 */
+.CartTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.CartTitle .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.CartTitle .title img {
+  width: 35px;
+}
+.CartTitle .title span {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.CartTitle .openFormBtn {
+  color: #1c3d5c;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.CartTitle .openFormBtn img {
+  width: 35px;
+  user-select: none;
+}
+.CartTitle .openFormBtn span {
+  user-select: none;
+}
+.CartTitle .openFormBtn:hover {
+  filter: brightness(50%);
+  font-weight: 600;
+}
+
+/* 購物車 */
+.CartItemsContainer {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgb(220, 220, 220);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 回到頁頂 */
+.Cart .toTop {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.Cart .toTop a {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #1c3d5c;
+}
+
+/* 購物車沒東西 */
+.nothingInCart {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+/* 響應式 */
+/* 740 */
+@media (max-width: 740px) {
+  .CartItemsContainer {
+    padding: 15px;
+    gap: 13px;
+  }
+}
+/* 550 */
+@media (max-width: 550px) {
+  /* 標題 */
+  .CartTitle {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .CartTitle .title span {
+    font-size: 1.25rem;
+  }
+  .CartTitle .title img {
+    width: 30px;
+  }
+  /* 表單按鈕 */
+  .CartTitle .openFormBtn {
+    font-size: 1.15rem;
+  }
+  .CartTitle .openFormBtn img {
+    width: 30px;
+    user-select: none;
+  }
+  /* items 容器 */
+  .CartItemsContainer {
+    padding: 10px;
+    gap: 11px;
+  }
+}

@@ -1,0 +1,20 @@
+.NotFoundPage {
+  padding: 100px 0;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.NotFoundPage img {
+  width: 200px;
+}
+.NotFoundPage span {
+  font-size: 1.35rem;
+}
+.NotFoundPage a {
+  font-size: 1.25rem;
+}

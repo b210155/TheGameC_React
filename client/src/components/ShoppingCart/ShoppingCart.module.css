@@ -1,0 +1,61 @@
+/* var */
+.shoppingCartPage {
+  --main_width: 70%;
+  --main_min-width: 1000px;
+}
+
+.shoppingCartPage {
+  width: var(--main_width);
+  min-width: var(--main_min-width);
+  padding: 50px 0;
+  margin: 0 auto;
+}
+
+/* 響應式 */
+/* 1080 */
+@media (max-width: 1080px) {
+  .shoppingCartPage {
+    --main_min-width: 900px;
+  }
+}
+/* 950 */
+@media (max-width: 950px) {
+  .shoppingCartPage {
+    --main_width: 85%;
+    --main_min-width: 850px;
+  }
+}
+/* 875 */
+@media (max-width: 875px) {
+  .shoppingCartPage {
+    --main_width: 90%;
+    --main_min-width: 700px;
+  }
+}
+/* 740 */
+@media (max-width: 740px) {
+  .shoppingCartPage {
+    --main_min-width: 600px;
+  }
+}
+/* 630 */
+@media (max-width: 630px) {
+  .shoppingCartPage {
+    --main_width: 95%;
+    --main_min-width: 500px;
+  }
+}
+/* 550 */
+@media (max-width: 550px) {
+  .shoppingCartPage {
+    --main_width: 100%;
+    --main_min-width: 450px;
+  }
+}
+/* 490 */
+@media (max-width: 490px) {
+  .shoppingCartPage {
+    --main_width: 100%;
+    --main_min-width: 370px;
+  }
+}

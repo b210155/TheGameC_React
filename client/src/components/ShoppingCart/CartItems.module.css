@@ -1,0 +1,160 @@
+/* var */
+.CartItem {
+  --main-width: 100%;
+  --main-height: 175px;
+}
+
+.CartItem {
+  width: var(--main-width);
+  height: var(--main-height);
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+}
+.CartItem div {
+  display: flex;
+  align-items: center;
+}
+.CartItem div span {
+  font-size: 1.2rem;
+}
+
+/* 圖片 */
+.CartItem .cimgContainer {
+  flex: 3;
+  width: auto;
+  min-width: 110px;
+  height: 100%;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  justify-content: center;
+}
+.CartItem .cimgContainer img {
+  width: auto;
+  height: 100%;
+}
+
+/* 名稱 */
+.CartItem .cnameContainer {
+  flex: 5;
+  display: flex;
+  justify-content: flex-start;
+}
+.CartItem .cnameContainer .name {
+  margin: 15%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  transition: 0.2s;
+}
+.CartItem .cnameContainer .name:hover {
+  color: rgb(88, 88, 88);
+}
+
+/* 類型 */
+.CartItem .ctypeContainer {
+  flex: 3;
+  justify-content: center;
+}
+
+/* 價格 */
+.CartItem .ccostContainer {
+  flex: 3;
+  justify-content: center;
+}
+
+/* 刪除 */
+.CartItem .cdelContainer {
+  flex: 2;
+  justify-content: center;
+  overflow: hidden;
+}
+.CartItem .cdelContainer img {
+  width: 35px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.CartItem .cdelContainer img:hover {
+  filter: brightness(60%);
+}
+
+/* 響應式 */
+/* 875 */
+@media (max-width: 875px) {
+  .CartItem .cimgContainer {
+    flex: 4;
+  }
+  /* 類型 */
+  .CartItem div span {
+    font-size: 1.1rem;
+  }
+}
+
+/* 740 */
+@media (max-width: 740px) {
+  .CartItem {
+    --main-width: 100%;
+    --main-height: 140px;
+  }
+  .CartItem .ctypeContainer {
+    flex: 3;
+    justify-content: center;
+    display: none;
+  }
+}
+/* 630 */
+@media (max-width: 630px) {
+  .CartItem {
+    --main-height: 120px;
+    position: relative;
+  }
+  .CartItem div span {
+    font-size: 1rem;
+  }
+  /* name */
+  .CartItem .cnameContainer {
+    flex: 4;
+  }
+  .CartItem .cnameContainer .name {
+    margin: 10%;
+    font-size: 1.1rem;
+  }
+  /* 刪除 */
+  .CartItem .cdelContainer {
+    flex: 0;
+    position: absolute;
+    bottom: 5px;
+    right: 7px;
+  }
+  .CartItem .cdelContainer img {
+    width: 27px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+}
+/* 550 */
+@media (max-width: 550px) {
+  /* 圖片 */
+  .CartItem .cimgContainer {
+    flex: 3;
+    min-width: 90px;
+  }
+  .CartItem div span {
+    font-size: 0.85rem;
+  }
+  .CartItem .cnameContainer .name {
+    margin: 10%;
+    font-size: 1rem;
+  }
+  .CartItem .ccostContainer {
+    flex: 3;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}

@@ -1,0 +1,14 @@
+.productsPage {
+  width: 80%;
+  padding: 50px 0;
+  margin: 0 auto;
+  display: flex;
+}
+
+/* 響應式 */
+/* 寬度小於1000px */
+@media (max-width: 1000px) {
+  .productsPage {
+    display: block;
+  }
+}

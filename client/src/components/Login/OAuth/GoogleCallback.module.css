@@ -1,0 +1,12 @@
+.googleCallback {
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  color: #345f8b;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.googleCallback:hover {
+  color: #1c3d5c;
+}

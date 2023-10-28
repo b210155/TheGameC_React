@@ -1,0 +1,44 @@
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 60%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px rgba(0, 0, 0, 0.1) solid;
+  background-color: #d4d4d4;
+  cursor: pointer;
+  position: relative;
+}
+.avatar .avatarImg {
+  width: auto;
+  height: 100%;
+  transition: 0.2s;
+  object-fit: contain;
+}
+.avatar .avatarEditBtn {
+  position: absolute;
+  width: 30%;
+  display: none;
+}
+/* Hover */
+.avatar:hover {
+  background-color: #acacac;
+}
+.avatar:hover .avatarImg {
+  opacity: 0.35;
+}
+.avatar:hover .avatarEditBtn {
+  display: block;
+  opacity: 0.9;
+}
+
+/* 響應式 */
+/* 800 */
+@media (max-width: 800px) {
+  .avatar {
+    width: 230px;
+    height: 230px;
+  }
+}

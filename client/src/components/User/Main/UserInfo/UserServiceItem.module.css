@@ -1,0 +1,79 @@
+/* var */
+.userServiceItem {
+  --main-width: 70%;
+}
+
+.userServiceItem {
+  width: var(--main-width);
+  display: flex;
+  gap: 5px;
+}
+
+.userServiceItem input {
+  flex: 1;
+}
+
+/* 分類 */
+.userServiceItem .category {
+  flex: 2;
+}
+
+/* 主旨 */
+.userServiceItem .subject {
+  flex: 5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.userServiceItem .subject:hover {
+  color: #0057a8;
+}
+
+.userServiceItem .solve {
+  flex: 2;
+  text-align: center;
+}
+
+.userServiceItem .done {
+  color: rgb(0, 175, 0);
+}
+.userServiceItem .notYet {
+  color: lightcoral;
+}
+
+/* 不可編輯 */
+.userServiceItem .notAllowEdit {
+  user-select: none;
+  pointer-events: none;
+  filter: brightness(80%);
+}
+
+/* 響應式 */
+/* 1160 */
+@media (max-width: 1160px) {
+  .userServiceItem {
+    --main-width: 90%;
+  }
+}
+/* 875 */
+@media (max-width: 875px) {
+  .userServiceItem {
+    --main-width: 95%;
+  }
+}
+/* 800 */
+@media (max-width: 800px) {
+  .userServiceItem {
+    --main-width: 100%;
+  }
+}
+/* 575 */
+@media (max-width: 575px) {
+  .userServiceItem {
+    --main-width: 100%;
+  }
+  .userServiceItem .category {
+    display: none;
+  }
+}

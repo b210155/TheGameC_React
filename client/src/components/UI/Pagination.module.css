@@ -1,0 +1,31 @@
+.pagination {
+  padding: 10px;
+}
+
+.pagination div {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pagination div button {
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1.35rem;
+  color: #808080;
+  border: none;
+  border-radius: 5px;
+  transition: 0.1s;
+}
+
+.pagination div button:hover {
+  background-color: #808080;
+  color: rgb(255, 255, 255);
+}
+
+.pagination div .currentPage {
+  background-color: #808080;
+  color: rgb(255, 255, 255);
+}

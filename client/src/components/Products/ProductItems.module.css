@@ -1,0 +1,32 @@
+.productItems {
+  width: 75%;
+}
+
+.productItems .ItemsContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 響應式 */
+/* 寬度小於1000px */
+@media (max-width: 1000px) {
+  .productItems {
+    width: 100%;
+  }
+  .productItems .ItemsContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* 寬度小於750px */
+@media (max-width: 750px) {
+  .productItems {
+    width: 100%;
+  }
+}
