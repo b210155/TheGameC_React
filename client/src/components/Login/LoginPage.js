@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { API_URL } from "../../constants";
-import Cookies from "js-cookie";
 
 import { login, logout } from "../../redux/loginSlice";
 
