@@ -89,13 +89,13 @@ const UserFuncSelect = (props) => {
         >
           個人資訊
         </button>
-        <button
+        {/* <button
           type="button"
           onClick={funcChangerBtn}
           className={isFuncSelected("帳戶安全")}
         >
           帳戶安全
-        </button>
+        </button> */}
         <button
           type="button"
           onClick={funcChangerBtn}
