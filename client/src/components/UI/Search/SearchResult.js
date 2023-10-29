@@ -23,7 +23,7 @@ const SearchResult = (props) => {
           />
         ))
       ) : (
-        <span className={classes.searchNotFound}>您搜尋的商品不存在</span>
+        <span className={classes.searchNotFound}>查無相關商品</span>
       )}
     </div>
   );
