@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useSelector, useDispatch } from "react-redux";
 import Cookies from "js-cookie";
+import axios from "axios";
+import { API_URL, API_URL_LOGIN } from "./constants";
 
 import { login, logout } from "./redux/loginSlice";
 
@@ -29,6 +31,7 @@ const App = () => {
   const userInfo = useSelector((state) => state.login.userInfo);
 
   /* 調用登入api */
+  // 即時資料更新
   // useEffect(() => {
   //   axios
   //     .get(API_URL + "/login/check-session", { withCredentials: true })
@@ -41,15 +44,24 @@ const App = () => {
   //     });
   // }, [dispatch]);
 
-  /* 調用登入api，以cookie */
+  /* 調用登入api */
+  // 調用 cookie username，獲取 user 的資料
   useEffect(() => {
-    let getUserInfo = Cookies.get("userInfo");
-    if (getUserInfo) {
-      getUserInfo = JSON.parse(decodeURIComponent(getUserInfo));
-      dispatch(login(getUserInfo));
-    } else {
-      dispatch(logout());
-    }
+    const fetchtUserData = async () => {
+      let getUsername = Cookies.get("username");
+      if (getUsername) {
+        try {
+          getUsername = JSON.parse(decodeURIComponent(getUsername));
+          const response = await axios.post(API_URL + "/login/getUserInfo", {
+            username: getUsername,
+          });
+          dispatch(login(response.data));
+        } catch (err) {}
+      } else {
+        dispatch(logout());
+      }
+    };
+    fetchtUserData();
   }, [dispatch]);
 
   return (

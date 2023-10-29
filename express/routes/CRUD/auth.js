@@ -117,15 +117,17 @@ router.post("/login", (req, res, next) => {
             .status(500)
             .json({ error: "login：傳送用戶資料至 redux 出錯" });
 
-        let encodedUser = JSON.stringify(results[0]);
-        res.cookie("userInfo", encodedUser); // 儲存到Cookie
+        let encodedUser = encodeURIComponent(
+          JSON.stringify(results[0].username)
+        );
+        res.cookie("username", encodedUser); // 儲存到Cookie
         res.json({ message: "登入成功", user: results[0] });
       });
     });
   })(req, res, next);
 });
 
-/* 訪問登入對象 (可用於例如客戶端頁面的渲染) */
+/* 訪問登入對象 (可用於例如客戶端頁面的渲染，和即時資料更新) (未用到) */
 router.get("/check-session", (req, res) => {
   if (req.isAuthenticated()) {
     res.json({
@@ -148,8 +150,8 @@ router.get("/logout", (req, res) => {
         if (err) {
           return res.status(500).json({ error: "登入出錯" });
         }
-        res.clearCookie("connect.sid");
-        res.clearCookie("userInfo");
+        res.clearCookie("connect.sid"); // 清除用戶相關 cookie
+        res.clearCookie("username"); // 清除用戶相關 cookie
         return res.json({ message: "登出成功" });
       });
     }
@@ -521,8 +523,7 @@ const authenticateJWT = (req, res, next) => {
 router.get("/google/user", authenticateJWT, async (req, res) => {
   try {
     // 登入成功後，順便將該用戶資料傳到 redux，方便之後的狀態管理
-    let sql =
-      "SELECT *, TIMESTAMPDIFF(YEAR, birthday, CURDATE()) AS current_age FROM users WHERE email = ?;";
+    let sql = "SELECT username FROM users WHERE email = ?;";
     config.query(sql, [req.session.userInfo.email], (err, results) => {
       if (err)
         return res
@@ -530,14 +531,33 @@ router.get("/google/user", authenticateJWT, async (req, res) => {
           .json({ error: "login：傳送用戶資料至 redux 出錯" });
 
       // 用戶資料存成 cookie 方便前端調用
-      const encodedUser = encodeURIComponent(JSON.stringify(results[0])); // cookie存中文會是亂碼，因此要先編碼
-      res.cookie("userInfo", encodedUser); // 儲存到Cookie
-      res.clearCookie("token"); // 儲存到Cookie
+      const encodedUser = encodeURIComponent(
+        JSON.stringify(results[0].username)
+      ); // cookie存中文會是亂碼，因此要先編碼
+      res.cookie("username", encodedUser); // 儲存到Cookie，儲存到Cookie，方便前端調用
+      res.clearCookie("token"); // 把 token 的 cookie 清除
       res.redirect(`${CLIENT_HOST}/login`); // 重新導向到前端頁面
     });
   } catch (err) {
     console.error(err);
     res.status(400).send("獲取 user info 錯誤");
+  }
+});
+
+/* 用戶資訊即時更新 + google 登入獲取資料 */
+router.post("/getUserInfo", async (req, res) => {
+  const { username } = req.body;
+  try {
+    // 登入成功後，順便將該用戶資料傳到 redux，方便之後的狀態管理
+    let sql =
+      "SELECT *, TIMESTAMPDIFF(YEAR, birthday, CURDATE()) AS current_age FROM users WHERE username = ?;";
+    config.query(sql, [username], (err, results) => {
+      if (err) return res.status(500).json({ error: "獲取 userinfo 錯誤" });
+      res.json(results[0]);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(400).send("未找到該用戶名稱");
   }
 });
 
