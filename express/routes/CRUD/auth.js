@@ -177,7 +177,7 @@ const generateVerifyCode = () => {
 };
 
 /* 令牌存在時間 */
-const tokenExpires = 5; // 設定 token 在3分鐘後過期
+const tokenExpires = 5; // 設定 token 在?分鐘後過期
 
 ///////////////////////////////
 /* 路由：設置發送信件至用戶信箱 */
@@ -212,7 +212,7 @@ router.post("/password_reset_mail_verify", (req, res) => {
       },
       JWT_SECRET, // 密鑰，用於簽署和驗證JWT token
       {
-        expiresIn: `${tokenExpires}m`, // 設定 token 在3分鐘後過期
+        expiresIn: `${tokenExpires}m`, // 設定 token 在?分鐘後過期
       }
     );
 
