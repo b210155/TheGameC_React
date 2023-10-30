@@ -432,6 +432,8 @@ function generateShortId(wordLength) {
 }
 
 /* 3. 回傳路由 */
+// 獲取資料並以 mail 判斷是否以擁有帳戶
+// 有則直接將 mail 傳給下個路由做登入，沒有則先註冊再將 mail 傳給下個路由做登入
 router.get("/google/callback", async (req, res) => {
   const { code } = req.query; // google 返回的授權碼，用於交換訪問令牌和刷新令牌
 
@@ -454,11 +456,17 @@ router.get("/google/callback", async (req, res) => {
       if (err) return res.sendStatus(500);
       /* 如果帳戶不存在 => 先註冊 */
       if (results.length < 1) {
+        let birthday;
         // 獲取生日
-        let { year, month, day } = userBirthday.data.birthdays[0].date;
-        let birthday = `${year}-${String(month).padStart(2, "0")}-${String(
-          day
-        ).padStart(2, "0")}`;
+        // 使用 forEach，是因為未必每個帳戶的 year 都在同一個 index，所以選擇確認有的
+        userBirthday.data.birthdays.forEach((data) => {
+          if (data.metadata.source.type === "ACCOUNT" && data.date.year) {
+            let { year, month, day } = data.date;
+            birthday = `${year}-${String(month).padStart(2, "0")}-${String(
+              day
+            ).padStart(2, "0")}`;
+          }
+        });
 
         // 密碼加密 + 加入 users
         let password = `Google${generateShortId(5)}`;
@@ -492,10 +500,11 @@ router.get("/google/callback", async (req, res) => {
       }
 
       // 創建 JWT (後傳入 cookie，驗證時調用)
-      const token = jwt.sign(userInfo.data, JWT_SECRET);
-      res.cookie("token", token, { httpOnly: true }); // httpOnly 增加cookie安全性
+      // 由於資料選擇從資料庫獲取，而非打包 google 傳來的，所以未用到
+      // const token = jwt.sign(userInfo.data, JWT_SECRET);
+      // res.cookie("token", token, { httpOnly: true }); // httpOnly 增加cookie安全性
 
-      req.session.userInfo = userInfo.data; // 用戶資料存入session，方便 /google/user 調用
+      req.session.userEmail = userInfo.data.email; // 用戶資料存入session，方便 /google/user 調用
       res.redirect("/login/google/user"); // 跳轉回前端頁面
     });
   } catch (err) {
@@ -505,26 +514,29 @@ router.get("/google/callback", async (req, res) => {
 });
 
 /* 4. 驗證 JWT 函數 (第三方登入) */
-const authenticateJWT = (req, res, next) => {
-  const token = req.cookies.token;
-  // 驗證 JWT token
-  if (token) {
-    jwt.verify(token, JWT_SECRET, (err, user) => {
-      if (err) return res.sendStatus(403);
-      req.user = user;
-      next(); // 驗證成功，進行下一個程序
-    });
-  } else {
-    res.sendStatus(401);
-  }
-};
+// 由於資料選擇從資料庫獲取，而非打包 google 傳來的，所以未用到
+// const authenticateJWT = (req, res, next) => {
+//   const token = req.cookies.token;
+//   // 驗證 JWT token
+//   if (token) {
+//     jwt.verify(token, JWT_SECRET, (err, user) => {
+//       if (err) return res.sendStatus(403);
+//       req.user = user;
+//       next(); // 驗證成功，進行下一個程序
+//     });
+//   } else {
+//     res.sendStatus(401);
+//   }
+// };
 
-/* 5. 路由：獲取 google 用戶資料 */
-router.get("/google/user", authenticateJWT, async (req, res) => {
+/* 5. 路由：獲取 mail 選擇帳號，將帳號傳到 cookie 後回到登入頁 */
+// cookie 的用戶帳號作為登入證明，只要該 cookie 存在，就會調動該 cookie 的 username
+// 去 /getUserInfo 獲取用戶資料
+router.get("/google/user", async (req, res) => {
   try {
     // 登入成功後，順便將該用戶資料傳到 redux，方便之後的狀態管理
     let sql = "SELECT username FROM users WHERE email = ?;";
-    config.query(sql, [req.session.userInfo.email], (err, results) => {
+    config.query(sql, [req.session.userEmail], (err, results) => {
       if (err)
         return res
           .status(500)
@@ -535,7 +547,7 @@ router.get("/google/user", authenticateJWT, async (req, res) => {
         JSON.stringify(results[0].username)
       ); // cookie存中文會是亂碼，因此要先編碼
       res.cookie("username", encodedUser); // 儲存到Cookie，儲存到Cookie，方便前端調用
-      res.clearCookie("token"); // 把 token 的 cookie 清除
+      res.clearCookie("token"); // 把 token 的 cookie 清除  // 由於資料選擇從資料庫獲取，而非打包 google 傳來的，所以未用到
       res.redirect(`${CLIENT_HOST}/login`); // 重新導向到前端頁面
     });
   } catch (err) {
@@ -544,7 +556,7 @@ router.get("/google/user", authenticateJWT, async (req, res) => {
   }
 });
 
-/* 用戶資訊即時更新 + google 登入獲取資料 */
+/* 路由：用戶資訊即時更新 + google 登入獲取資料 */
 router.post("/getUserInfo", async (req, res) => {
   const { username } = req.body;
   try {
