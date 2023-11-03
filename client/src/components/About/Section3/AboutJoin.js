@@ -34,13 +34,16 @@ const AboutJoin = () => {
       <span className={classes.title}>加入 TheGameC</span>
       <span className={classes.separator}></span>
       <span>
-        如果您對我們的理念感興趣，或對自己的技術有自信的話，歡迎您與我們一同向前邁進
+        對我們的理念感興趣，或對自己的技術有自信的話，歡迎您與我們一同向前邁進
       </span>
       {/* 主要內容 */}
       <div className={classes.main}>
         {/* 大圖 */}
         <div className={classes.imgContainer}>
-          <img src="/images/UI/About/usingComputer.jpg" alt="圖片" />
+          <img
+            src={process.env.PUBLIC_URL + "/images/UI/About/usingComputer.jpg"}
+            alt="圖片"
+          />
         </div>
         {/* 內文 */}
         {/* 選擇器 */}
