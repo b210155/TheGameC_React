@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Backdrop from "./Backdrop";
+
+import Image from "./Image/Image";
 import classes from "./Dialog.module.css";
 
 const Dialog = (props) => {
@@ -10,7 +12,7 @@ const Dialog = (props) => {
       <Backdrop />
       <div className={classes.dialog}>
         <div className={classes.title}>
-          <img
+          <Image
             src="/images/UI/common_button/cancel.svg"
             onClick={props.onDialogClose}
             alt="關閉視窗"

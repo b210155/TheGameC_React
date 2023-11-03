@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { API_URL } from "../../../../constants";
 
 import AvatarEditForm from "./AvatarEditForm";
+
+import Image from "../../../UI/Image/Image";
 import classes from "./Avatar.module.css";
 
 const Avatar = (props) => {
@@ -28,7 +30,7 @@ const Avatar = (props) => {
         alt="大頭照"
         onClick={openFormHandler}
       />
-      <img
+      <Image
         className={classes.avatarEditBtn}
         src="/images/UI/User/avatarEdit.svg"
         alt=""

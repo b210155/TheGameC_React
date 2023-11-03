@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+import Image from "../../../UI/Image/Image";
 import classes from "./ProductSelectFunc.module.css";
 
 const ProductSelectFunc = (props) => {
@@ -31,7 +32,7 @@ const ProductSelectFunc = (props) => {
         } ${props.selectFunc === "評論" ? classes.selected : null}`}
         onClick={() => props.onSelectFunc("評論")}
       >
-        <img src="/images/UI/Product/button/like.svg" />
+        <Image src="/images/UI/Product/button/like.svg" />
         <span>評論</span>
       </div>
       <div
@@ -40,7 +41,7 @@ const ProductSelectFunc = (props) => {
         }`}
         onClick={() => props.onSelectFunc("留言區")}
       >
-        <img src="/images/UI/Product/button/comment.svg" />
+        <Image src="/images/UI/Product/button/comment.svg" />
         <span>留言區</span>
       </div>
       <div
@@ -49,7 +50,7 @@ const ProductSelectFunc = (props) => {
         }`}
         onClick={() => props.onSelectFunc("推薦商品")}
       >
-        <img src="/images/UI/Product/button/happy.svg" />
+        <Image src="/images/UI/Product/button/happy.svg" />
         <span>推薦商品</span>
       </div>
       <div
@@ -58,7 +59,7 @@ const ProductSelectFunc = (props) => {
         } ${props.selectFunc === "回報問題" ? classes.selected : null}`}
         onClick={pageChangeHandler}
       >
-        <img src="/images/UI/Product/button/service.svg" />
+        <Image src="/images/UI/Product/button/service.svg" />
         <span>回報問題</span>
       </div>
     </div>

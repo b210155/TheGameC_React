@@ -5,6 +5,7 @@ import { logout } from "../../../redux/loginSlice";
 import { API_URL } from "../../../constants";
 import axios from "axios";
 
+import Image from "../Image/Image";
 import Search from "../Search/Search";
 
 import "./Sidebar.css";
@@ -55,13 +56,13 @@ const Sidebar = () => {
         onClick={openSidebarHandler}
       >
         {openSidebar ? (
-          <img
+          <Image
             className="closeBar"
             src="/images/UI/common_button/cancel.svg"
             alt="關閉導覽列"
           />
         ) : (
-          <img
+          <Image
             className="openBar"
             src="/images/UI/Nav/Navbar.svg"
             alt="展開導覽列"
@@ -72,15 +73,15 @@ const Sidebar = () => {
       <div className={`Sidebar ${openSidebar ? "show_SideBar" : null}`}>
         {/* Logo */}
         <Link to="/" className="logo">
-          <img src="/images/UI/Nav/logo_text.svg" alt="" />
+          <Image src="/images/UI/Nav/logo_text.svg" alt="logo" />
         </Link>
         {/* 工具欄位 */}
         <div className="tools">
           <div className="tool" title="商品搜尋" onClick={openSearchHandler}>
-            <img src="/images/UI/Nav/search.svg" alt="" />
+            <Image src="/images/UI/Nav/search.svg" alt="商品搜尋" />
           </div>
           <Link to="/user" className={`tool`} title="個人資訊">
-            <img src="/images/UI/Nav/userInfo.svg" alt="" />
+            <Image src="/images/UI/Nav/userInfo.svg" alt="個人資訊" />
           </Link>
           {isUserLoggedIn ? (
             <div className="tool" title="登出" onClick={logoutHandler}>
@@ -96,7 +97,7 @@ const Sidebar = () => {
             </div>
           ) : (
             <Link to="/login" className="tool" title="前往登入頁面">
-              <img src="/images/UI/Nav/login.svg" alt="" />
+              <Image src="/images/UI/Nav/login.svg" alt="登入頁面" />
             </Link>
           )}
 

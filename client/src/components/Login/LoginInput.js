@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+import Image from "../UI/Image/Image";
 import classes from "./LoginInput.module.css";
 
 const LoginInput = (props) => {
@@ -29,7 +30,7 @@ const LoginInput = (props) => {
   return (
     <div className={classes.inputContainer}>
       <label htmlFor={props.name}>
-        <img src={`images/UI/Login/${props.img}`} alt={props.name} />
+        <Image src={`/images/UI/Login/${props.img}`} alt={props.name} />
       </label>
       <input
         id={props.name}

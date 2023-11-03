@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 
 import Avatar from "./Avatar";
 import UserInfoEditForm from "./UserInfoEditForm";
+
+import Image from "../../../UI/Image/Image";
 import classes from "./UserIntro.module.css";
 
 const UserIntro = (props) => {
@@ -26,7 +28,7 @@ const UserIntro = (props) => {
         <div className={classes.separator}></div>
         <div className={classes.smallTilteContainer}>
           <span className={classes.smallTitle}>基本資料</span>
-          <img
+          <Image
             className={classes.InfoEditBtn}
             src="/images/UI/User/editBtn.svg"
             alt="修改"

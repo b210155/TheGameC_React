@@ -1,6 +1,7 @@
 import React from "react";
-
 import CartItems from "./CartItems";
+
+import Image from "../UI/Image/Image";
 import classes from "./Cart.module.css";
 
 const Cart = (props) => {
@@ -8,11 +9,14 @@ const Cart = (props) => {
     <div className={classes.Cart}>
       <div className={classes.CartTitle}>
         <div className={classes.title}>
-          <img src="images/UI/common_button/shoppingCart_black.svg" />
+          <Image
+            src="/images/UI/common_button/shoppingCart_black.svg"
+            alt="購物車"
+          />
           <span>購物車</span>
         </div>
         <div className={classes.openFormBtn} onClick={props.onDialogOpen}>
-          <img src="images/UI/ShoppingCart/credit.svg" />
+          <Image src="/images/UI/ShoppingCart/credit.svg" alt="結帳" />
           <span>我要結帳</span>
         </div>
       </div>

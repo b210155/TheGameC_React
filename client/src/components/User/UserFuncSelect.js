@@ -4,6 +4,7 @@ import { logout } from "../../redux/loginSlice";
 import axios from "axios";
 import { API_URL_LOGIN } from "../../constants";
 
+import Image from "../UI/Image/Image";
 import classes from "./UserFuncSelect.module.css";
 
 const UserFuncSelect = (props) => {
@@ -64,14 +65,16 @@ const UserFuncSelect = (props) => {
 
   return (
     <React.Fragment>
-      <img
+      <Image
         className={classes.showFuncSelectBtn}
         src={`/images/UI/common_button/arrow_${
           openSelectBtn ? "left" : "right"
         }.png`}
-        alt="開啟資訊欄位"
+        alt="開啟/關閉側邊欄位"
+        title="開啟/關閉側邊欄位"
         onClick={openSelectHandler}
       />
+
       <div
         className={`${classes.UserFuncSelect_block} ${
           showSelect ? classes.showFuncSelect : classes.dontShowFuncSelect

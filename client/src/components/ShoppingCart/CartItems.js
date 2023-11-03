@@ -1,6 +1,7 @@
 import React from "react";
 import { API_URL, URL } from "../../constants";
 
+import Image from "../UI/Image/Image";
 import classes from "./CartItems.module.css";
 
 const CartItems = (props) => {
@@ -37,8 +38,8 @@ const CartItems = (props) => {
         <span>NT$ {props.item.price}</span>
       </div>
       <div className={classes.cdelContainer}>
-        <img
-          src="images/UI/common_button/trash.svg"
+        <Image
+          src="/images/UI/common_button/trash.svg"
           onClick={() => props.onDel(props.item.cart_id)}
           title="從購物車中移除"
         />

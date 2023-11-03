@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "../../UI/Image/Image";
 import classes from "./AboutIdeaBox.module.css";
 
 const AboutIdeaBox = ({ data }) => {
@@ -17,7 +17,7 @@ const AboutIdeaBox = ({ data }) => {
       </div>
       {/* 背景圖 */}
       <div className={classes.mask_black}></div>
-      <img src={`/images/UI/About/${data.image}`} alt="理念圖" />
+      <Image src={`/images/UI/About/${data.image}`} alt="理念圖" />
     </div>
   );
 };

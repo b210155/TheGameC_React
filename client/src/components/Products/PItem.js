@@ -1,7 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import classes from "./PItem.module.css";
 import { URL, API_URL } from "../../constants";
+
+import Image from "../UI/Image/Image";
+import classes from "./PItem.module.css";
 
 const PItem = (props) => {
   /* 登入狀態 */
@@ -49,9 +51,9 @@ const PItem = (props) => {
         >
           {/* 使用條件運算子與字串組合時，要用括號把條件運算子包住，
           否則會因為運算子的優先級而得到不預期的結果 */}
-          <img
+          <Image
             src="/images/UI/common_button/shoppingCart_white.svg"
-            alt="購物車icon"
+            alt="購物車"
           />
         </div>
       </div>

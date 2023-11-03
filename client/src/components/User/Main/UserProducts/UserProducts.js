@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { API_URL } from "../../../../constants";
 
 import UserPItem from "./UserPItem";
+
+import Image from "../../../UI/Image/Image";
 import classes from "./UserProducts.module.css";
 
 const UserProducts = (props) => {
@@ -55,7 +57,7 @@ const UserProducts = (props) => {
       <div className={classes.separator}></div>
       {/* 搜尋欄位 */}
       <div className={classes.searchBar}>
-        <img src="/images/UI/Nav/search.svg" alt="搜尋圖標" />
+        <Image src="/images/UI/Nav/search.svg" alt="搜尋圖標" />
         <input type="text" onChange={inputChangeHandler} value={inputValue} />
         <button onClick={searchBtnHandler}>搜尋</button>
       </div>

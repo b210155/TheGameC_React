@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactDOM from "react-dom";
 import { API_URL } from "../../../constants";
 
+import Image from "../Image/Image";
 import Backdrop from "../Backdrop";
 import SearchForm from "./SearchForm";
 import SearchResult from "./SearchResult";
@@ -46,7 +47,7 @@ const Search = (props) => {
       <Backdrop onDialogClose={props.onDialogClose} title="任意點擊退出畫面" />
       <div className={classes.search}>
         {/* 關閉搜索 */}
-        <img
+        <Image
           className={classes.closeBtn}
           src="/images/UI/common_button/cancel.svg"
           alt="關閉搜索"

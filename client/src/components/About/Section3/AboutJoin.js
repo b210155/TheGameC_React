@@ -1,6 +1,8 @@
 import React from "react";
 
 import AboutJoinSelect from "./AboutJoinSelect";
+
+import Image from "../../UI/Image/Image";
 import classes from "./AboutJoin.module.css";
 
 /* 加入我們資料 */
@@ -34,16 +36,13 @@ const AboutJoin = () => {
       <span className={classes.title}>加入 TheGameC</span>
       <span className={classes.separator}></span>
       <span>
-        對我們的理念感興趣，或對自己的技術有自信的話，歡迎您與我們一同向前邁進
+        如果您對我們的理念感興趣，或對自己的技術有自信的話，歡迎您與我們一同向前邁進
       </span>
       {/* 主要內容 */}
       <div className={classes.main}>
         {/* 大圖 */}
         <div className={classes.imgContainer}>
-          <img
-            src={process.env.PUBLIC_URL + "/images/UI/About/usingComputer.jpg"}
-            alt="圖片"
-          />
+          <Image src="/images/UI/About/usingComputer.jpg" alt="圖片" />
         </div>
         {/* 內文 */}
         {/* 選擇器 */}

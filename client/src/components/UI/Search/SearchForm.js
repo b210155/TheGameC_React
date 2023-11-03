@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { debounce } from "lodash"; // 防抖：一段時間過去之後才執行函數
 
+import Image from "../Image/Image";
 import classes from "./SearchForm.module.css";
 
 const SearchForm = (props) => {
@@ -63,11 +64,12 @@ const SearchForm = (props) => {
 
   return (
     <form className={classes.searchForm} onSubmit={submitFormHandler}>
-      <img
+      <Image
         className={classes.searchImg}
         src="/images/UI/Nav/search.svg"
         alt="搜索"
       />
+      {/* Input */}
       <div className={classes.inputContainer}>
         <input
           type="text"

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { URL } from "../../constants";
 
+import Image from "../UI/Image/Image";
 import classes from "./ProductsTypeIntro.module.css";
 
 const ProductsTypeIntro = () => {
@@ -76,7 +77,7 @@ const ProductsTypeIntro = () => {
             onClick={dropDownHandler}
             title="類型介紹"
           >
-            <img
+            <Image
               src={`/images/UI/common_button/${
                 dropDown ? "arrow_up" : "arrow_down"
               }.svg`}
@@ -91,7 +92,10 @@ const ProductsTypeIntro = () => {
               onClick={() => typeChangeHandler("動作")}
               title="動作"
             >
-              <img src={`/images/UI/product/TypeBg/action_logo.svg`} />
+              <Image
+                src={`/images/UI/product/TypeBg/action_logo.svg`}
+                alt="動作"
+              />
             </div>
             <div
               className={`${classes.typeBtn} ${
@@ -100,7 +104,10 @@ const ProductsTypeIntro = () => {
               onClick={() => typeChangeHandler("冒險")}
               title="冒險"
             >
-              <img src={`/images/UI/product/TypeBg/avg_logo.svg`} />
+              <Image
+                src={`/images/UI/product/TypeBg/avg_logo.svg`}
+                alt="冒險"
+              />
             </div>
             <div
               className={`${classes.typeBtn} ${
@@ -109,7 +116,10 @@ const ProductsTypeIntro = () => {
               onClick={() => typeChangeHandler("模擬")}
               title="模擬"
             >
-              <img src={`/images/UI/product/TypeBg/slg_logo.svg`} />
+              <Image
+                src={`/images/UI/product/TypeBg/slg_logo.svg`}
+                alt="模擬"
+              />
             </div>
             <div
               className={`${classes.typeBtn} ${
@@ -118,7 +128,10 @@ const ProductsTypeIntro = () => {
               onClick={() => typeChangeHandler("策略")}
               title="策略"
             >
-              <img src={`/images/UI/product/TypeBg/strategy_logo.svg`} />
+              <Image
+                src={`/images/UI/product/TypeBg/strategy_logo.svg`}
+                alt="策略"
+              />
             </div>
             <div
               className={`${classes.typeBtn} ${
@@ -127,7 +140,10 @@ const ProductsTypeIntro = () => {
               onClick={() => typeChangeHandler("運動與競技")}
               title="運動與競技"
             >
-              <img src={`/images/UI/product/TypeBg/esport_logo.svg`} />
+              <Image
+                src={`/images/UI/product/TypeBg/esport_logo.svg`}
+                alt="運動與競技"
+              />
             </div>
           </div>
         </div>

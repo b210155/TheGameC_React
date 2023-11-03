@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+import Image from "../Image/Image";
 import classes from "./Footer.module.css";
 
 const Footer = () => {
@@ -26,7 +27,7 @@ const Footer = () => {
         >
           {/* 左邊：資訊 */}
           <div className={classes.info}>
-            <img src="/images/UI/Nav/logo_text.svg" alt="logo" />
+            <Image src="/images/UI/Nav/logo_text.svg" alt="logo" />
             <div className={classes.intro}>
               <p>TheGameC 遊戲購買平台 | TheGameC 公司</p>
               <p>信箱：TheGameCforTest123@gmail.com</p>
@@ -36,13 +37,13 @@ const Footer = () => {
           {/* 右邊：連結 */}
           <div className={classes.link}>
             <div>
-              <img src="/images/UI/Footer/fb.svg" alt="FB logo" />
+              <Image src="/images/UI/Footer/fb.svg" alt="FB logo" />
             </div>
             <div>
-              <img src="/images/UI/Footer/ig.svg" alt="IG logo" />
+              <Image src="/images/UI/Footer/ig.svg" alt="IG logo" />
             </div>
             <div>
-              <img src="/images/UI/Footer/twitter.svg" alt="Twitter logo" />
+              <Image src="/images/UI/Footer/twitter.svg" alt="Twitter logo" />
             </div>
           </div>
         </div>
