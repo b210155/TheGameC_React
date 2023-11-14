@@ -43,7 +43,7 @@ const HomeNewProducts = (props) => {
     autoplay: true,
     autoplaySpeed: 5000,
     infinite: true,
-    speed: 900,
+    speed: 1000,
     slidesToShow: 6,
     slidesToScroll: 6,
     nextArrow: <Arrow_next />,
