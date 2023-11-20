@@ -45,6 +45,19 @@
   filter: brightness(70%);
 }
 
+/* 換圖動畫 */
+@keyframes fadeIn {
+  from {
+    filter: brightness(20%);
+  }
+  to {
+    filter: brightness(100%);
+  }
+}
+.imgAnimation {
+  animation: fadeIn 0.7s ease;
+}
+
 /* 響應式 */
 /* 寬度小於1080px */
 @media (max-width: 1080px) {

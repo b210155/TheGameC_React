@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { API_URL } from "../../../constants";
 import { useNavigate } from "react-router-dom";
 
 import classes from "./HomePopularImg.module.css";
 
 const HomePopularImg = (props) => {
+  /* 切換動畫 */
+  const [animation, setAnimation] = useState("");
+  useEffect(() => {
+    setAnimation(classes.imgAnimation);
+    const timer = setTimeout(() => {
+      setAnimation("");
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [props.selectProduct.image]);
+
   /* 前往商品網頁 */
   const navigate = useNavigate();
   const toPage = () => {
@@ -14,7 +24,7 @@ const HomePopularImg = (props) => {
   return (
     <React.Fragment>
       <img
-        className={classes.homePopularImg}
+        className={`${classes.homePopularImg} ${animation}`}
         src={`${API_URL}/static/images/products/${props.selectProduct.image}`}
         alt="商品大圖"
       />
