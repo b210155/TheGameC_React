@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-import { URL } from "../../constants";
+import React, { useState, useEffect } from "react";
 
 import Image from "../UI/Image/Image";
 import classes from "./ProductsTypeIntro.module.css";
@@ -67,9 +65,21 @@ const ProductsTypeIntro = () => {
     }
   };
 
+  /* 切換動畫 */
+  const [animation, setAnimation] = useState("");
+  useEffect(() => {
+    setAnimation(classes.productTypeAnimation);
+    const timer = setTimeout(() => setAnimation(""), 500);
+    return () => clearTimeout(timer);
+  }, [type]);
+
   return (
     <React.Fragment>
-      <div className={`${classes.productsTypeIntro} ${classes[type.image]}`}>
+      <div
+        className={`${classes.productsTypeIntro} ${
+          classes[type.image]
+        } ${animation}`}
+      >
         <div className={classes.cover}>
           {/* 下拉選單按鈕 */}
           <div

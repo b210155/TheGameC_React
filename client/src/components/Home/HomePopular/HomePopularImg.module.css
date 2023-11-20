@@ -46,7 +46,7 @@
 }
 
 /* 換圖動畫 */
-@keyframes fadeIn {
+@keyframes filterBrightness {
   from {
     filter: brightness(20%);
   }
@@ -55,7 +55,7 @@
   }
 }
 .imgAnimation {
-  animation: fadeIn 0.7s ease;
+  animation: filterBrightness 0.7s ease;
 }
 
 /* 響應式 */
