@@ -1,4 +1,3 @@
-/* 創建各種狀態邏輯 */
 import { createSlice } from "@reduxjs/toolkit";
 import { IS_LOGGED_IN_KEY } from "../constants";
 
