@@ -4,9 +4,13 @@ import { API_URL_LOGIN } from "../../../constants";
 
 import Dialog from "../../UI/Dialog";
 import LoginInput from "../LoginInput";
+import FullPageLoader from "../../UI/Loader/FullPageLoader";
+
 import classes from "./PasswordForget.module.css";
 
 const PasswordForget = (props) => {
+  const [loader, setLoader] = useState(false); // Loader 等待條
+
   /* 新密碼狀態 */
   const [newPasswordState, setNewPasswordState] = useState({
     username: "",
@@ -37,6 +41,7 @@ const PasswordForget = (props) => {
   /* 獲取驗證碼 */
   const getVerifyCode = async () => {
     if (!newPasswordState.username) return alert("請輸入使用者名稱");
+    setLoader(true); // 開啟 loader 動畫
     try {
       const response = await axios.post(
         `${API_URL_LOGIN}/password_reset_mail_verify`,
@@ -48,6 +53,7 @@ const PasswordForget = (props) => {
       console.error("錯誤獲取 password_reset_mail_verify:", err);
       alert(err.response.data.message || "獲取驗證碼出錯，請稍後在試");
     }
+    setLoader(false); // 關閉 loader 動畫
   };
 
   /* 送出表單 */
@@ -78,60 +84,66 @@ const PasswordForget = (props) => {
   };
 
   return (
-    <Dialog onDialogClose={props.onDialogClose}>
-      <form className={classes.passwordForgetForm} onSubmit={submitFormHandler}>
-        <span className={classes.logo}>填寫您的新密碼</span>
-        <LoginInput
-          type="text"
-          img="user.svg"
-          name="username"
-          placeholder="使用者名稱"
-          title="驗證碼寄出後，此欄位將無法再更動"
-          value={newPasswordState.username}
-          onChangeHandler={inputChangeHandler}
-          readOnly={isVerifyCodeSubmit}
-        />
-        <button
-          type="button"
-          className={classes.getVerify}
-          onClick={getVerifyCode}
+    <>
+      {loader ? <FullPageLoader /> : null /* 等待驗證碼 loader */}
+      <Dialog onDialogClose={props.onDialogClose}>
+        <form
+          className={classes.passwordForgetForm}
+          onSubmit={submitFormHandler}
         >
-          獲取驗證碼
-        </button>
-        <LoginInput
-          type="text"
-          img="mail.svg"
-          name="verifyCode"
-          title="若沒收到驗證碼，請稍待片刻或再次點選獲取驗證碼"
-          placeholder="請填寫信箱內的驗證碼"
-          value={newPasswordState.verifyCode}
-          onChangeHandler={inputChangeHandler}
-        />
-        <LoginInput
-          type="password"
-          img="password.svg"
-          name="newPassword"
-          regex="^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{6,}$"
-          title="請輸入至少6碼以上英文加數字，且不能包含特殊字元"
-          placeholder="請填寫新密碼"
-          value={newPasswordState.newPassword}
-          onChangeHandler={inputChangeHandler}
-          onInputValid={inputVaildHandler}
-        />
-        <LoginInput
-          type="password"
-          img="password.svg"
-          name="newPasswordVerify"
-          regex="^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{6,}$"
-          title="請確認與原輸入密碼相同"
-          placeholder="再次輸入新密碼"
-          value={newPasswordState.newPasswordVerify}
-          onChangeHandler={inputChangeHandler}
-          onInputValid={inputVaildHandler}
-        />
-        <button className={classes.newPasswordBtn}>提交新密碼</button>
-      </form>
-    </Dialog>
+          <span className={classes.logo}>填寫您的新密碼</span>
+          <LoginInput
+            type="text"
+            img="user.svg"
+            name="username"
+            placeholder="使用者名稱"
+            title="驗證碼寄出後，此欄位將無法再更動"
+            value={newPasswordState.username}
+            onChangeHandler={inputChangeHandler}
+            readOnly={isVerifyCodeSubmit}
+          />
+          <button
+            type="button"
+            className={classes.getVerify}
+            onClick={getVerifyCode}
+          >
+            獲取驗證碼
+          </button>
+          <LoginInput
+            type="text"
+            img="mail.svg"
+            name="verifyCode"
+            title="若沒收到驗證碼，請稍待片刻或再次點選獲取驗證碼"
+            placeholder="請填寫信箱內的驗證碼"
+            value={newPasswordState.verifyCode}
+            onChangeHandler={inputChangeHandler}
+          />
+          <LoginInput
+            type="password"
+            img="password.svg"
+            name="newPassword"
+            regex="^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{6,}$"
+            title="請輸入至少6碼以上英文加數字，且不能包含特殊字元"
+            placeholder="請填寫新密碼"
+            value={newPasswordState.newPassword}
+            onChangeHandler={inputChangeHandler}
+            onInputValid={inputVaildHandler}
+          />
+          <LoginInput
+            type="password"
+            img="password.svg"
+            name="newPasswordVerify"
+            regex="^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{6,}$"
+            title="請確認與原輸入密碼相同"
+            placeholder="再次輸入新密碼"
+            value={newPasswordState.newPasswordVerify}
+            onChangeHandler={inputChangeHandler}
+            onInputValid={inputVaildHandler}
+          />
+          <button className={classes.newPasswordBtn}>提交新密碼</button>
+        </form>
+      </Dialog>
+    </>
   );
 };
 
