@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { URL, API_URL } from "../../constants";
+import { URL, API_URL } from "../../../constants";
 
-import Image from "../UI/Image/Image";
+import Image from "../../UI/Image/Image";
 import classes from "./PItem.module.css";
 
 const PItem = (props) => {

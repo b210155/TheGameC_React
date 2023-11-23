@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import Products from "./Products";
-import ProductsTypeIntro from "./ProductsTypeIntro";
+import Products from "./Products/Products";
+import ProductsTypeIntro from "./ProductsTypeIntro/ProductsTypeIntro";
 
 import classes from "./ProductsPage.module.css";
 

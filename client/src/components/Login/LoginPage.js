@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 import LoginFuncSelect from "./LoginFuncSelect";
-import Login from "./Login";
-import Register from "./Register";
-import Logout from "./Logout";
+import Login from "./Login/Login";
+import Register from "./Register/Register";
+import Logout from "./Logout/Logout";
 import LoginWarning from "./Warning/LoginWarning";
 
 import classes from "./LoginPage.module.css";

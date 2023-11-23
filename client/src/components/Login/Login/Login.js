@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { API_URL } from "../../constants";
+import { API_URL } from "../../../constants";
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/loginSlice";
+import { login } from "../../../redux/loginSlice";
 
-import LoginInput from "./LoginInput";
+import LoginInput from "../LoginInput";
 import PasswordForget from "./PasswordForget";
-import GoogleCallback from "./OAuth/GoogleCallback";
+import GoogleCallback from "../OAuth/GoogleCallback";
 
 import classes from "./Login.module.css";
 

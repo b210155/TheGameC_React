@@ -8,32 +8,32 @@
 
 /* 圖片 */
 .action {
-  background-image: url("../../../public/images/UI/Product/TypeBg/action.jpg");
+  background-image: url("../../../../public/images/UI/Product/TypeBg/action.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .avg {
-  background-image: url("../../../public/images/UI/Product/TypeBg/avg.jpg");
+  background-image: url("../../../../public/images/UI/Product/TypeBg/avg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .slg {
-  background-image: url("../../../public/images/UI/Product/TypeBg/slg.jpg");
+  background-image: url("../../../../public/images/UI/Product/TypeBg/slg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .strategy {
-  background-image: url("../../../public/images/UI/Product/TypeBg/strategy.jpg");
+  background-image: url("../../../../public/images/UI/Product/TypeBg/strategy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .esport {
-  background-image: url("../../../public/images/UI/Product/TypeBg/esport.jpg");
+  background-image: url("../../../../public/images/UI/Product/TypeBg/esport.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

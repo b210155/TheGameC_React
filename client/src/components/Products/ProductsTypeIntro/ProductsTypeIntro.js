@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Image from "../UI/Image/Image";
+import Image from "../../UI/Image/Image";
 import classes from "./ProductsTypeIntro.module.css";
 
 const ProductsTypeIntro = () => {
@@ -59,6 +59,14 @@ const ProductsTypeIntro = () => {
           image: "esport",
           intro:
             "運動與競技類型的遊戲模擬了真實世界運動和競技活動，重現真實的運動規則和物理機制，讓玩家在虛擬環境中享受到足球、籃球、賽車等多種運動的樂趣。遊戲提供競爭性強，刺激有趣的遊戲體驗，並通常具有單人與多人模式。包括《FIFA》、《NBA 2K》、《舞力全開》等。這些遊戲具有精緻的圖像和真實的遊戲機制，並提供多種遊戲模式和挑戰，讓玩家可以在不同的比賽和環境中測試自己的技能和策略。",
+        });
+        break;
+      default:
+        setType({
+          name: "動作",
+          image: "action",
+          intro:
+            "動作遊戲是一個刺激且高速度的遊戲類型，它注重於玩家的手眼協調和反應速度。玩家通過各種不同的環境和關卡，同時面對敵人的攻擊。動作遊戲的核心是戰鬥和動作，包括跳躍、射擊、格鬥等。此類型包括《俠盜列車手》、《極地戰壕》和《惡靈勢力》等，這些遊戲非常刺激，需要玩家具有高度的技能和耐心。動作類型是市場上最受歡迎和最持久的類型之一，能夠提供無與倫比的刺激和樂趣。",
         });
         break;
     }

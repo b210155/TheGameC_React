@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { API_URL_LOGIN } from "../../constants";
+import { API_URL_LOGIN } from "../../../constants";
 
-import Dialog from "../UI/Dialog";
-import LoginInput from "./LoginInput";
+import Dialog from "../../UI/Dialog";
+import LoginInput from "../LoginInput";
 import classes from "./PasswordForget.module.css";
 
 const PasswordForget = (props) => {

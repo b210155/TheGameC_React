@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { API_URL } from "../../constants";
+import { API_URL } from "../../../constants";
 import { useDispatch } from "react-redux";
-import { logout } from "../../redux/loginSlice";
+import { logout } from "../../../redux/loginSlice";
 import { useSelector } from "react-redux";
 
 import classes from "./Logout.module.css";

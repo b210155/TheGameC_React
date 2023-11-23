@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { API_URL } from "../../constants";
+import { API_URL } from "../../../constants";
 import axios from "axios";
 
-import LoginInput from "./LoginInput";
+import LoginInput from "../LoginInput";
 import classes from "./Register.module.css";
 
 const Register = (props) => {

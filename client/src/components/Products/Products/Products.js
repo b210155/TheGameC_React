@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { API_URL } from "../../constants";
+import { API_URL } from "../../../constants";
 
 import ProductTypes from "./ProductTypes";
 import ProductItems from "./ProductItems";

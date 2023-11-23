@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PItem from "./PItem";
-import Pagination from "../UI/Pagination";
+import Pagination from "../../UI/Pagination";
 import classes from "./ProductItems.module.css";
 
 const ProductItems = (props) => {
