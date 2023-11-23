@@ -91,9 +91,7 @@ const Register = (props) => {
       return alert("密碼與再次輸入的密碼不相符。");
     // 年齡驗證
     let age = calculateAge(registerInfo.birthday);
-    if (age < 12) {
-      return alert("用戶年齡不得小於 12 歲。");
-    }
+    if (age < 12) return alert("用戶年齡不得小於 12 歲。");
     userRegisterHandler(registerInfo);
   };
 
