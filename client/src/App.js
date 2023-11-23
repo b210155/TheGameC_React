@@ -1,25 +1,15 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { API_URL } from "./constants";
-
 import { login, logout } from "./redux/loginSlice";
 
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
-import ProductsPage from "./components/Products/ProductsPage";
+import AppRouter from "./router";
 import NavUsing from "./components/UI/Nav/NavUsing";
-import LoginPage from "./components/Login/LoginPage";
-import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
-import User from "./components/User/User";
-import Product from "./components/Products/Product/Product";
-import Service from "./components/Service/Service";
 import Footer from "./components/UI/Footer/Footer";
-
 import ScrollToTop from "./components/UI/ScrollToTop"; // 從頁頂開始
 
 const App = () => {
@@ -53,17 +43,7 @@ const App = () => {
       <div>
         <NavUsing />
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/product/:product_id" element={<Product />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/shoppingCart" element={<ShoppingCart />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <AppRouter /> {/* 路由 */}
         <Footer />
       </div>
     </Router>
