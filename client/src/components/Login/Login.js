@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { API_URL } from "../../constants";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/loginSlice";
 
 import LoginInput from "./LoginInput";
 import PasswordForget from "./PasswordForget";
@@ -6,7 +10,7 @@ import GoogleCallback from "./OAuth/GoogleCallback";
 
 import classes from "./Login.module.css";
 
-const Login = (props) => {
+const Login = () => {
   const [forgetPassword, setForgetPassword] = useState(); // 忘記密碼
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -26,10 +30,33 @@ const Login = (props) => {
     setPassword(e.target.value);
   };
 
+  /* 登入 */
+  const dispatch = useDispatch();
+  const userLoginHandler = async (username, password) => {
+    try {
+      const response = await axios.post(
+        API_URL + "/login/login",
+        {
+          username,
+          password,
+        },
+        {
+          withCredentials: true,
+          // 確保 session ID cookie 在前後端正確傳遞，從而允許Passport進行用戶反序列化，實現身份驗證。
+        }
+      );
+      alert(response.data.message);
+      dispatch(login(response.data.user));
+    } catch (err) {
+      console.error("錯誤獲取 login:", err.response.data);
+      alert(err.response.data.message);
+    }
+  };
+
   /* 提交登入表單 */
   const loginFormHandler = (e) => {
     e.preventDefault();
-    props.onLogin(username, password);
+    userLoginHandler(username, password);
   };
 
   return (

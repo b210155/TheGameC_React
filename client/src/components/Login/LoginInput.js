@@ -4,7 +4,6 @@ import Image from "../UI/Image/Image";
 import classes from "./LoginInput.module.css";
 
 const LoginInput = (props) => {
-  const [inputValue, setInputValue] = useState(""); // input 值
   const [isValid, setIsValid] = useState(false); // 有無通過驗證
 
   /* 給予 isValid 值 */
@@ -21,7 +20,6 @@ const LoginInput = (props) => {
   const changeInputHandler = (e) => {
     // 先檢查有無正規表達式，有的話先驗證
     if (props.regex) {
-      setInputValue(e.target.value);
       setIsValid(regex.test(e.target.value));
     }
     props.onChangeHandler(e);
@@ -41,6 +39,7 @@ const LoginInput = (props) => {
         pattern={props.regex}
         autoComplete={props.autoComplete || ""}
         onChange={changeInputHandler}
+        value={props.value}
         required
         readOnly={props.readOnly}
       />
