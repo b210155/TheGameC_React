@@ -53,7 +53,6 @@ const Nav2 = () => {
 
   return (
     <React.Fragment>
-      {/* <div className="block"></div> */}
       <header className="Nav2">
         {windowWidth < 655 ? null : (
           <Link to="/" className="logo">

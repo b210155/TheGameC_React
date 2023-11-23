@@ -27,19 +27,14 @@ const Product = () => {
     switch (type) {
       case "動作":
         return "action";
-        break;
       case "冒險":
         return "avg";
-        break;
       case "模擬":
         return "slg";
-        break;
       case "策略":
         return "strategy";
-        break;
       case "運動與競技":
         return "esport";
-        break;
       default:
         return "";
     }

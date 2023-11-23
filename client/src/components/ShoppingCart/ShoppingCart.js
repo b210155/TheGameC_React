@@ -8,9 +8,8 @@ import { API_URL, IS_LOGGED_IN_KEY } from "../../constants";
 import Cart from "./Cart";
 import PayForm from "./PayForm";
 import classes from "./ShoppingCart.module.css";
-import Dialog from "../UI/Dialog";
 
-const ShoppingCart = (props) => {
+const ShoppingCart = () => {
   /* 登入狀態 */
   const isUserLoggedIn = useSelector((state) => state.login.isUserLoggedIn);
   const userInfo = useSelector((state) => state.login.userInfo);
@@ -25,7 +24,6 @@ const ShoppingCart = (props) => {
     if (session_Login !== "1" && !isUserLoggedIn) {
       navigate("/login", {
         state: {
-          openWarning: true,
           text: "您尚未登入帳號，登入後即可使用【購物車】功能。",
         },
       });

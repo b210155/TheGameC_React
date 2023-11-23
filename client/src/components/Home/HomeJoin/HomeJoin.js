@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import classes from "./HomeJoin.module.css";
 
-const HomeJoin = (props) => {
-  /* 導航 */
+const HomeJoin = () => {
+  /* 導航至 login */
   const navigate = useNavigate();
   const goToPage = () => {
     navigate("/login");

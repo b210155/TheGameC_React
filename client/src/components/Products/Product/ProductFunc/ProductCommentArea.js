@@ -59,7 +59,7 @@ const ProductCommentArea = (props) => {
             目前還沒有人留言，歡迎您成為第一人!
           </span>
         ) : (
-          [...reviews] // reverse()會影響原始arr，使用拷貝版本，不要影響到原始Array，避免原始的被反覆反轉
+          [...reviews] // reverse()會影響原始arr，故使用拷貝版本，避免原始的被反覆反轉
             .reverse()
             .map((review) => (
               <ProductComment key={reviews.username} fetchReview={review} />

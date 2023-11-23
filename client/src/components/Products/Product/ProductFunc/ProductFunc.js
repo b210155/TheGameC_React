@@ -28,6 +28,7 @@ const ProductFunc = (props) => {
   /* 選擇的功能UI */
   const selectFuncUI = (func) => {
     switch (func) {
+      /* 評論/評分 */
       case "評論":
         return isUserLoggedIn ? (
           <ProductRate
@@ -38,12 +39,12 @@ const ProductFunc = (props) => {
         ) : (
           <span className={classes.notLogin}>登入後才能使用評分功能。</span>
         );
-        break;
+      /* 留言區 */
       case "留言區":
         return (
           <ProductCommentArea text="留言區" product_id={props.product_id} />
         );
-        break;
+      /* 推薦商品 */
       case "推薦商品":
         return (
           <ProductRecommend
@@ -53,7 +54,6 @@ const ProductFunc = (props) => {
             selectFunc={selectFunc}
           />
         );
-        break;
     }
   };
 

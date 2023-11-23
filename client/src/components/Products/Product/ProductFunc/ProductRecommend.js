@@ -50,7 +50,6 @@ const ProductRecommend = (props) => {
                 <span>{product.description}</span>
               </div>
             </div>
-            {/* <button>前往網頁</button> */}
           </div>
         ))}
       </div>

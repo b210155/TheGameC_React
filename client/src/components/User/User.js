@@ -12,7 +12,6 @@ import classes from "./User.module.css";
 const User = () => {
   /* 用戶狀態 */
   const isUserLoggedIn = useSelector((state) => state.login.isUserLoggedIn);
-  const userInfo = useSelector((state) => state.login.userInfo);
   const session_Login = sessionStorage.getItem(IS_LOGGED_IN_KEY);
 
   /* 若未登入，則進入登入頁面 */
@@ -24,7 +23,6 @@ const User = () => {
     if (session_Login !== "1" && !isUserLoggedIn) {
       navigate("/login", {
         state: {
-          openWarning: true,
           text: "您尚未登入帳號，登入後即可查看【個人資訊】內容。",
         },
       });

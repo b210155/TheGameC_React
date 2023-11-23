@@ -8,7 +8,6 @@ import classes from "./ProductSelectFunc.module.css";
 const ProductSelectFunc = (props) => {
   /* 用戶狀態 */
   const isUserLoggedIn = useSelector((state) => state.login.isUserLoggedIn);
-  const userInfo = useSelector((state) => state.login.userInfo);
 
   /* 切換頁面 */
   const navigate = useNavigate();

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { useSelector, useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import axios from "axios";
-import { API_URL, API_URL_LOGIN } from "./constants";
+import { API_URL } from "./constants";
 
 import { login, logout } from "./redux/loginSlice";
 
@@ -22,29 +22,10 @@ import Footer from "./components/UI/Footer/Footer";
 
 import ScrollToTop from "./components/UI/ScrollToTop"; // 從頁頂開始
 
-import TransitionPage from "./components/UI/TransitionPage";
-
 const App = () => {
   const dispatch = useDispatch();
-  /* 登入狀態 */
-  const isUserLoggedIn = useSelector((state) => state.login.isUserLoggedIn);
-  const userInfo = useSelector((state) => state.login.userInfo);
 
-  /* 調用登入api */
-  // 即時資料更新
-  // useEffect(() => {
-  //   axios
-  //     .get(API_URL + "/login/check-session", { withCredentials: true })
-  //     .then((response) => {
-  //       if (response.data.message === "用戶已登入") {
-  //         dispatch(login(response.data.user));
-  //       } else {
-  //         dispatch(logout());
-  //       }
-  //     });
-  // }, [dispatch]);
-
-  /* 調用登入api */
+  /* 登入時，調用登入api */
   // 調用 cookie username，獲取 user 的資料
   useEffect(() => {
     const fetchtUserData = async () => {
@@ -84,7 +65,6 @@ const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
-        {/* <TransitionPage /> */}
       </div>
     </Router>
   );

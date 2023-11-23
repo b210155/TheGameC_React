@@ -13,7 +13,7 @@ const ProductInfo = (props) => {
   const [pInCart, setPInCart] = useState(false); // 購物車是否有此商品
   const [pInOrder, setPInOrder] = useState(false); // 訂單是否有此商品
 
-  /* 先驗證有沒有收到資料(資料傳輸需要時間，傳到前是undefined或null) */
+  /* 先驗證有沒有收到資料(資料傳輸需要時間) */
   // 確認有資料(fetch)後
   const dataOrLoading = (fetch, dataAccessor) =>
     fetch ? dataAccessor(fetch) : "Loading...";
@@ -57,8 +57,8 @@ const ProductInfo = (props) => {
               // 使用 reduce() 和 concat() 來合併多個陣列
               const inOrderPID = response.data.reduce((acc, curr) => {
                 return acc.concat(JSON.parse(curr.product_id));
-                // JSON.parse()可將字串轉成陣列 (product_id 為 "[...]"，這裡將其轉為 [...])
-                // 將各個陣列 JSON.parse(result.product_id) 加到累積器 acc 中
+                // JSON.parse() ("[...]" -> [...])
+                // 加到累積器 acc 中
               }, []); // 設定 [] 為 acc 初始值
               setPInOrder(inOrderPID.includes(props.fetchProduct.product_id)); // 商品是否存在於購買清單
             });

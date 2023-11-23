@@ -13,7 +13,7 @@ import HomeNewPitem from "./HomeNewPitem";
 
 import classes from "./HomeNewProducts.module.css";
 
-const HomeNewProducts = (props) => {
+const HomeNewProducts = () => {
   const [products, setProducts] = useState([]);
 
   /* 獲取熱門商品 */
@@ -78,7 +78,7 @@ const HomeNewProducts = (props) => {
         },
       },
       {
-        breakpoint: 475,
+        breakpoint: 530,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

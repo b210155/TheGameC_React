@@ -19,10 +19,6 @@
   letter-spacing: 0.1rem;
 }
 
-.inputWarning {
-  color: red;
-}
-
 /* 響應式 */
 /* 750 */
 @media (max-width: 750px) {

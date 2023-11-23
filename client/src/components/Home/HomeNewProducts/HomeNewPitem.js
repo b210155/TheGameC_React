@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../../constants";
 
-import Image from "../../UI/Image/Image";
 import classes from "./HomeNewPitem.module.css";
 
 const HomeNewPitem = (props) => {

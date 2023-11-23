@@ -14,7 +14,6 @@ const ProductsTypeIntro = () => {
 
   /* 下拉選單狀態 */
   const [dropDown, setDropDown] = useState(false); // 是否展開
-
   const dropDownHandler = () => {
     setDropDown((prev) => !prev);
   };

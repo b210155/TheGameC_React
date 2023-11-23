@@ -4,8 +4,6 @@ import { API_URL } from "../../../constants";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import "../slick.css";
-// import "../slick-theme.css";
 
 import HomePopularProduct from "./HomePopularProduct";
 import HomePopularImg from "./HomePopularImg";

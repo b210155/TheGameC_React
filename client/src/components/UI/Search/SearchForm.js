@@ -20,9 +20,6 @@ const SearchForm = (props) => {
       item.product_name.includes(value)
     );
 
-    // 傳送結果到 Search 更新 UI
-    // props.onBurry(result);
-
     // 建議內容設置
     if (result.length === props.fetchProducts.length) return setSuggestions([]);
     setSuggestions(result);
