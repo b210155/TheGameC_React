@@ -1,0 +1,11 @@
+@keyframes brightness {
+  from {
+    filter: brightness(20%);
+  }
+  to {
+    filter: brightness(100%);
+  }
+}
+.animation_brightness {
+  animation: brightness 0.7s ease;
+}

@@ -3,12 +3,13 @@ import { API_URL } from "../../../constants";
 import { useNavigate } from "react-router-dom";
 
 import classes from "./HomePopularImg.module.css";
+import animations from "../../../animations/animations.module.css";
 
 const HomePopularImg = (props) => {
   /* 切換動畫 */
   const [animation, setAnimation] = useState("");
   useEffect(() => {
-    setAnimation(classes.imgAnimation);
+    setAnimation(animations.animation_brightness);
     const timer = setTimeout(() => {
       setAnimation("");
     }, 500);

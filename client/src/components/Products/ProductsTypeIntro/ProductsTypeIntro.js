@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Image from "../../UI/Image/Image";
 import classes from "./ProductsTypeIntro.module.css";
+import animations from "../../../animations/animations.module.css";
 
 const ProductsTypeIntro = () => {
   /* 類型選擇 */
@@ -75,7 +76,7 @@ const ProductsTypeIntro = () => {
   /* 切換動畫 */
   const [animation, setAnimation] = useState("");
   useEffect(() => {
-    setAnimation(classes.productTypeAnimation);
+    setAnimation(animations.animation_brightness);
     const timer = setTimeout(() => setAnimation(""), 500);
     return () => clearTimeout(timer);
   }, [type]);
